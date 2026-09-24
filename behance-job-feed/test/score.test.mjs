@@ -60,3 +60,13 @@ test('card text fallback', () => {
   assert.equal(c.posted, '2 days ago');
   assert.equal(c.remote, true);
 });
+
+test('ends-in parsing', async () => {
+  const { parseEndsIn } = await import('../scrape.mjs');
+  assert.equal(parseEndsIn('Remote | Freelance | US$250-500 | Ends in 14 days'), 14);
+  assert.equal(parseEndsIn('Ends in 3 days'), 3);
+  assert.equal(parseEndsIn('Ends in 2 weeks'), 14);
+  assert.equal(parseEndsIn('Ends today'), 0);
+  assert.equal(parseEndsIn('no date here'), null);
+  assert.equal(fromCardText('Title\nClient\nRemote\nFreelance\nUS$250-500\nEnds in 13 days').endsInDays, 13);
+});

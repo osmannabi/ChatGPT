@@ -33,7 +33,9 @@ export async function login() {
   await new Promise((resolve) => ctx.on('close', resolve));
 }
 
-export async function scrapeJobs({ maxJobs = 40, skipIds = new Set(), headless = true } = {}) {
+// minEndsInDays: Behance closes jobs 14 days after posting, so "Ends in 14 days" means posted today.
+// Jobs showing fewer days are dropped; jobs whose end date can't be read are kept.
+export async function scrapeJobs({ maxJobs = 40, skipIds = new Set(), headless = true, minEndsInDays = 0 } = {}) {
   const ctx = await openBrowser({ headless });
   const page = ctx.pages()[0] ?? (await ctx.newPage());
   const fromNetwork = new Map();
@@ -85,7 +87,8 @@ export async function scrapeJobs({ maxJobs = 40, skipIds = new Set(), headless =
   }
   for (const [id, net] of fromNetwork) if (!jobs.has(id)) jobs.set(id, { ...net, url: net.url ?? JOB_URL(id) });
 
-  const fresh = [...jobs.values()].filter((j) => !skipIds.has(String(j.id))).slice(0, maxJobs);
+  const tooOld = (j) => j.endsInDays != null && j.endsInDays < minEndsInDays;
+  const fresh = [...jobs.values()].filter((j) => !skipIds.has(String(j.id)) && !tooOld(j)).slice(0, maxJobs);
   for (const job of fresh) {
     if (job.applied) continue;
     if (job.description && job.description.length > 300) continue;
@@ -105,7 +108,7 @@ export async function scrapeJobs({ maxJobs = 40, skipIds = new Set(), headless =
   }
 
   await ctx.close();
-  return fresh.map((j) => ({ ...j, id: String(j.id), postedAt: toIso(parsePosted(j.posted)) ?? j.postedAt ?? null }));
+  return fresh.filter((j) => !tooOld(j)).map((j) => ({ ...j, id: String(j.id), postedAt: toIso(parsePosted(j.posted)) ?? j.postedAt ?? null }));
 }
 
 function walk(node, visit, depth = 0) {
@@ -149,6 +152,7 @@ export function fromCardText(text = '') {
     remote: /remote/i.test(text),
     type: lines.find((l) => /^(freelance|full[- ]?time|part[- ]?time|contract)$/i.test(l))?.replace(/^full[- ]?time$/i, 'Full-time').replace(/^freelance$/i, 'Freelance').replace(/^part[- ]?time$/i, 'Part-time').replace(/^contract$/i, 'Contract') ?? null,
     applied: /applied on/i.test(text),
+    endsInDays: parseEndsIn(text),
   };
 }
 
@@ -163,9 +167,21 @@ function mergeDetail(job, { text, title }) {
     remote: job.remote || card.remote,
     location: job.location ?? location,
     timeline: job.timeline ?? timeline,
+    endsInDays: job.endsInDays ?? card.endsInDays,
     type: job.type ?? (/full[- ]?time/i.test(text) ? 'Full-time' : /part[- ]?time/i.test(text) ? 'Part-time' : /contract/i.test(text) ? 'Contract' : 'Freelance'),
     description: job.description?.length > 300 ? job.description : text,
   };
+}
+
+export function parseEndsIn(text = '') {
+  const m = text.match(/ends? in (\d+|an?|one) (day|week|hour)s?/i);
+  if (m) {
+    const n = /^\d+$/.test(m[1]) ? Number(m[1]) : 1;
+    return m[2].toLowerCase() === 'week' ? n * 7 : m[2].toLowerCase() === 'hour' ? 0 : n;
+  }
+  if (/ends? today/i.test(text)) return 0;
+  if (/ends? tomorrow/i.test(text)) return 1;
+  return null;
 }
 
 function stripHtml(s) {

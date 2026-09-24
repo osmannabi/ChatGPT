@@ -23,7 +23,17 @@ npm run dry     # scan and print scores, no Notion writes
 npm run scan    # scan and push jobs scoring >= MIN_SCORE to Notion
 ```
 
-Each run also saves the raw scored list to `out/run-*.json`. Job IDs already in Notion are skipped, so it is safe to run as often as you like. For a schedule, a cron line such as `0 9,15 * * * cd ~/behance-job-feed && npm run scan` (or a launchd job) works.
+Each run also saves the raw scored list to `out/run-*.json`. Job IDs already in Notion are skipped, so it is safe to run as often as you like. Only jobs showing "Ends in 14 days" (Behance's default for a job posted today) are kept; change `ENDS_IN_DAYS` in `.env` to widen that.
+
+### Schedule (weekdays 09:30, 14:00, 17:00)
+
+```bash
+./schedule-mac.sh            # install
+./schedule-mac.sh --remove   # uninstall
+tail -f out/scan.log         # watch runs
+```
+
+It uses a macOS LaunchAgent, so it runs in your logged-in session; if the Mac is asleep at a run time, the run happens once when it wakes.
 
 ## Scoring (0-100)
 
