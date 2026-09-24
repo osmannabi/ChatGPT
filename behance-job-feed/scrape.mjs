@@ -54,23 +54,29 @@ export async function scrapeJobs({ maxJobs = 40, skipIds = new Set(), headless =
     await ctx.close();
     throw new Error('Not logged in to Behance. Run `npm run login` first.');
   }
-  for (let i = 0; i < 4; i++) {
-    await page.mouse.wheel(0, 2500);
+  // The job list scrolls inside its own pane, so scroll that pane (and the page) to load more cards.
+  for (let i = 0; i < 5; i++) {
+    await page.evaluate(() => {
+      for (const el of document.querySelectorAll('[class*="JobsListView"], [class*="jobsList"]')) el.scrollTop = el.scrollHeight;
+      window.scrollBy(0, 2500);
+    });
     await page.waitForTimeout(1500);
   }
 
+  // Cards link to /joblist/freelance/<id>/<slug> (or /joblist/fulltime/..., ?freelanceJobId=<id>).
   const fromDom = await page.$$eval('a[href*="freelanceJobId="], a[href*="/joblist/"]', (links) =>
     links.map((a) => {
       const href = a.href;
-      const id = new URL(href).searchParams.get('freelanceJobId') ?? href.match(/\/joblist\/(\d+)/)?.[1];
-      const card = a.closest('li, article, [class*="Card"], [class*="card"]') ?? a;
-      return { id, url: href, cardText: card.innerText.trim().slice(0, 1500) };
-    }).filter((j) => j.id)
+      const id = new URL(href).searchParams.get('freelanceJobId') ?? href.match(/\/joblist\/(?:[a-z-]+\/)?(\d+)/)?.[1];
+      const card = a.closest('[class*="JobListingCard-jobListingCard"], [class*="BeCard-container"], li, article') ?? a;
+      return { id, url: href.replace(/#.*$/, ''), cardText: card.innerText.trim().slice(0, 1500) };
+    }).filter((j) => j.id && !/^\s*$/.test(j.cardText))
   );
 
   const jobs = new Map();
   for (const d of fromDom) {
-    if (jobs.has(d.id)) continue;
+    // Prefer the card entry over nav/detail-pane links to the same job.
+    if (jobs.has(d.id) && jobs.get(d.id).cardText.length >= d.cardText.length) continue;
     const net = fromNetwork.get(d.id) ?? {};
     jobs.set(d.id, { ...fromCardText(d.cardText), ...net, id: d.id, url: d.url, cardText: d.cardText });
   }
@@ -78,12 +84,15 @@ export async function scrapeJobs({ maxJobs = 40, skipIds = new Set(), headless =
 
   const fresh = [...jobs.values()].filter((j) => !skipIds.has(String(j.id))).slice(0, maxJobs);
   for (const job of fresh) {
+    if (job.applied) continue;
     if (job.description && job.description.length > 300) continue;
     try {
-      await page.goto(job.url.includes('freelanceJobId') || job.url.includes('/joblist/') ? job.url : JOB_URL(job.id), { waitUntil: 'domcontentloaded' });
+      await page.goto(JOB_URL(job.id), { waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(2500);
       const detail = await page.evaluate(() => {
-        const root = document.querySelector('[role="dialog"]') ?? document.querySelector('main') ?? document.body;
+        // The detail sits next to the job list; drop the list, nav and footer so other jobs' text doesn't leak in.
+        const root = (document.querySelector('[role="dialog"]') ?? document.querySelector('main') ?? document.body).cloneNode(true);
+        root.querySelectorAll('[class*="JobsListView"], [class*="jobsList"], [class*="JobListingCard"], nav, header, footer, [class*="topActions"]').forEach((el) => el.remove());
         return { text: root.innerText.trim().slice(0, 8000), title: root.querySelector('h1, h2')?.innerText.trim() };
       });
       Object.assign(job, mergeDetail(job, detail));
@@ -135,6 +144,8 @@ export function fromCardText(text = '') {
     budget: text.match(/(?:[$€£₺]\s?[\d.,]+k?(?:\s?[-–]\s?[$€£₺]?\s?[\d.,]+k?)?(?:\s?\/\s?(?:hr|hour|mo|month|yr|year))?)|(?:[\d.,]+k?\s?(?:USD|EUR|GBP|TRY))/i)?.[0]?.replace(/[.,]$/, '') ?? null,
     posted: text.match(/(\d+|an?)\s*(minute|min|hour|hr|day|week|month)s?\s*ago|just now|today|yesterday/i)?.[0] ?? null,
     remote: /remote/i.test(text),
+    type: lines.find((l) => /^(freelance|full[- ]?time|part[- ]?time|contract)$/i.test(l))?.replace(/^full[- ]?time$/i, 'Full-time').replace(/^freelance$/i, 'Freelance').replace(/^part[- ]?time$/i, 'Part-time').replace(/^contract$/i, 'Contract') ?? null,
+    applied: /applied on/i.test(text),
   };
 }
 

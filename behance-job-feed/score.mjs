@@ -123,7 +123,8 @@ export function scoreJob(job, now = new Date()) {
   if (flags.includes('On-site only')) score -= 15;
   score = clamp(Math.round(score), 0, 100);
 
-  const decision = redFlag ? 'Skipped: red flag' : score >= 50 ? 'Review' : 'Below floor';
+  if (job.applied) flags.push('Already applied');
+  const decision = job.applied ? 'Applied' : redFlag ? 'Skipped: red flag' : score >= 50 ? 'Review' : 'Below floor';
   const why = [
     `${lane} lane (${laneHits} hit${laneHits === 1 ? '' : 's'})`,
     budget ? `~$${budget.usd}${budget.hourly ? '/hr' : budget.monthly ? '/mo' : budget.yearly ? '/yr' : ''}` : 'no budget',
