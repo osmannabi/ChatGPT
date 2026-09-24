@@ -17,7 +17,7 @@ const STRENGTHS = [/automotive|car\b|vehicle/, /advertis|agency|campaign/, /prod
 // Work outside the studio's lanes.
 const OFF_LANE = [/ui\/?ux|\bux\b|\bui\b|figma|web ?design|landing page|wordpress|shopify dev/, /developer|front[- ]?end|react|coding/, /social media manager|community manager|copywrit/, /video edit|youtube edit|tiktok edit|reels edit/, /animator|2d animation|motion graphics/, /game (art|asset)|unity|unreal/, /fashion design|interior design|architect/];
 
-const SPEC = [/unpaid/, /\bspec\b|on spec/, /for exposure|portfolio opportunity/, /equity only|revenue share/, /volunteer/];
+const SPEC = [/unpaid/, /spec work|on spec\b|speculative/, /for exposure|portfolio opportunity/, /equity only|revenue share/, /volunteer/];
 const FREE_TEST = [/free (test|sample|trial)/, /unpaid (test|trial)/, /test task.{0,40}(unpaid|not paid|free)/];
 const ON_SITE = [/on[- ]?site|in[- ]office|relocat|hybrid/];
 
@@ -68,9 +68,10 @@ export function scoreJob(job, now = new Date()) {
     if (hits > laneHits) [lane, laneHits] = [name, hits];
   }
 
-  // Fit (max 40)
+  // Fit (max 40). A lane keyword in the title counts extra: briefs are noisy, titles say what the job is.
   const offHits = count(OFF_LANE, text);
-  let fit = Math.min(28, laneHits * 10) + Math.min(12, count(STRENGTHS, text) * 4);
+  const titleHit = lane !== 'Other' && any(LANES[lane], (job.title ?? '').toLowerCase());
+  let fit = Math.min(28, laneHits * 10) + (titleHit ? 8 : 0) + Math.min(12, count(STRENGTHS, text) * 4);
   if (lane === 'Other') fit = Math.min(fit, 10);
   fit -= offHits * 8;
   if (lane === 'Other' && offHits) flags.push('Missing skill');
@@ -124,7 +125,7 @@ export function scoreJob(job, now = new Date()) {
   score = clamp(Math.round(score), 0, 100);
 
   if (job.applied) flags.push('Already applied');
-  const decision = job.applied ? 'Applied' : redFlag ? 'Skipped: red flag' : score >= 50 ? 'Review' : 'Below floor';
+  const decision = job.applied ? 'Applied' : redFlag ? 'Skipped: red flag' : score >= 45 ? 'Review' : 'Below floor';
   const why = [
     `${lane} lane (${laneHits} hit${laneHits === 1 ? '' : 's'})`,
     budget ? `~$${budget.usd}${budget.hourly ? '/hr' : budget.monthly ? '/mo' : budget.yearly ? '/yr' : ''}` : 'no budget',

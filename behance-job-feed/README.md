@@ -36,7 +36,7 @@ Same idea as the Upwork feed, adjusted for what Behance shows (no applicant coun
 | Client Quality | 20 | Named company, brief length, clear deliverables/deadline, company link |
 | Freshness | 15 | Under 6h = 15, under 24h = 12, under 3 days = 8 |
 
-Red flags: unpaid/spec work or a free test caps the score at 25 and marks it "Skipped: red flag"; on-site only costs 15 points. Only rows with Decision = Review and Score >= `MIN_SCORE` (default 50) go to Notion. Tune keywords in `score.mjs`.
+Red flags: unpaid/spec work or a free test caps the score at 25 and marks it "Skipped: red flag"; on-site only costs 15 points. Only rows with Decision = Review and Score >= `MIN_SCORE` (default 45) go to Notion. Tune keywords in `score.mjs`.
 
 ## If Behance changes its page
 

@@ -18,6 +18,9 @@ export async function openBrowser({ headless }) {
     headless,
     viewport: { width: 1440, height: 1000 },
     locale: 'en-US',
+    // Behance serves an empty job list to browsers that identify as headless.
+    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+    args: ['--disable-blink-features=AutomationControlled'],
   });
 }
 

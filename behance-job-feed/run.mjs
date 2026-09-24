@@ -13,7 +13,7 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 loadEnv(path.join(HERE, '.env'));
 
 const args = new Set(process.argv.slice(2));
-const MIN_SCORE = Number(process.env.MIN_SCORE ?? 50);
+const MIN_SCORE = Number(process.env.MIN_SCORE ?? 45);
 const MAX_JOBS = Number(process.env.MAX_JOBS ?? 40);
 
 if (args.has('--login')) {
@@ -26,7 +26,11 @@ const notion = dryRun ? null : notionClient({ token: must('NOTION_TOKEN'), dataS
 const known = notion ? await notion.existingJobIds() : new Set();
 const run = new Date().toISOString().slice(0, 16).replace('T', ' ');
 
-const jobs = await scrapeJobs({ maxJobs: MAX_JOBS, skipIds: known, headless: !args.has('--headed') });
+let jobs = await scrapeJobs({ maxJobs: MAX_JOBS, skipIds: known, headless: !args.has('--headed') });
+if (!jobs.length && !args.has('--headed')) {
+  console.log('Hidden browser saw no jobs; retrying with a visible window.');
+  jobs = await scrapeJobs({ maxJobs: MAX_JOBS, skipIds: known, headless: false });
+}
 const scored = jobs.map((job) => ({ job, s: scoreJob(job) })).sort((a, b) => b.s.score - a.s.score);
 
 fs.mkdirSync(path.join(HERE, 'out'), { recursive: true });
