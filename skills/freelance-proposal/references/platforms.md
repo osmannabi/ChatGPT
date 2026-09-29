@@ -18,7 +18,11 @@ cover letter. That fragment is the entire basis on which the proposal gets opene
 rewrite it three times, and count the characters. If it runs long, cut adjectives before you cut
 substance.
 
-**Length:** 120-180 words total. Scannable: opener, two or three short lines, one question.
+**Length:** 180-260 words total, longer than the other platforms on purpose. Upwork letters use the
+problem-first structure in SKILL.md Step 4 (*Upwork structure*): understanding, the problem as we
+define it, the solution, optional experience plus the Expert-Vetted line on cold applications, one
+question. The extra words go to thinking through the problem, not to credentials. Keep it
+scannable: short paragraphs with white space between them.
 
 **Links:** `mehmet-turan.com` only. Never `35milimetre.com`; it carries contact details and Upwork
 prohibits routing clients off-platform. One link, inside the body.

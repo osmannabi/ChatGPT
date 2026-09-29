@@ -300,7 +300,9 @@ believe I can help here; the part that will decide it is…"* Never invent a tra
 
 ## Step 4 — Write the cover letter
 
-Target **120-180 words**. Shorter than the old 250. Clients scan.
+Target **120-180 words** on Fiverr, Behance and email. Clients scan. **Upwork is the exception:**
+it uses its own problem-first structure and runs longer, **180-260 words**; see *Upwork structure*
+below. Every other rule in this step still applies there.
 
 ### The first 225 characters carry the whole thing
 
@@ -337,6 +339,63 @@ Mehmet
 
 The middle can be short standalone lines or light bullets; whichever reads faster. Do not write a
 paragraph block. A wall of text is dead on arrival, however good the words are.
+
+### Upwork structure: show we understand the problem, then solve it
+
+On Upwork, replace the structure above with this one. The client is reading dozens of proposals that
+all claim skill; the one that shows it understood the problem better than the brief described it is
+the one that gets opened and answered. That understanding is what the extra length is for; it is not
+room for more credentials.
+
+```
+Hi [Name],
+
+[UNDERSTANDING: 1-2 sentences. Their goal, and what is really going on underneath it. This is the
+preview, so it must also pass the 225-character test above.]
+
+[THE PROBLEM: 2-4 short sentences. A short summary of what the issue actually is. Think past the
+brief: what is causing it, what the client may not have named, what will decide whether the result
+works. Be specific about the image, the product, the use (Amazon, DOOH, social, print).]
+
+[THE SOLUTION: 2-4 short lines. How we would solve that exact problem: the approach, the decision we
+would make and why, and the first stage. This is where the opinion from Step 3 lives.]
+
+[EXPERIENCE (only if it adds something): 1-2 lines. One genuinely relevant brand, comparable job or
+result. On cold applications, end this part with the Expert-Vetted line below.]
+
+[1 question they can answer in ten seconds.]
+
+Mehmet
+```
+
+**Defining the problem is not restating the brief.** Don't stick to what was written; expand it and
+think about what the problem actually is. The brief says what the client *asked for*; the problem
+section says *why it's hard or why it isn't working yet*, drawn from the looking in Step 2 and
+Mehmet's craft knowledge. *"You need six colourway renders of the pouch"* is a restatement. *"The
+current shots are lit from one soft source, so the pouch reads flat next to Zyn on shelf; re-shooting
+six colourways won't fix that, because the problem is the light, not the retouch"* is a problem
+definition. When the brief is thin, reason from the product, the platform it's for and what usually
+breaks in that kind of job, and frame it honestly as a read (*"From what's in the post, the real risk
+here is…"*), never as fact about their business that nobody told us.
+
+**The solution must answer the problem as defined**, not the brief as written. If the problem section
+names the lighting, the solution says how the lighting gets rebuilt. A solution that could be pasted
+under any problem is filler.
+
+**Experience is optional; include it only when it strengthens this specific case.** One line, one
+relevant proof point, no list of logos. Follow the overclaim rules in *Voice*; where the match is
+adjacent, use *"I believe I can help based on my experience with [related area]."*
+
+**The Expert-Vetted line (Upwork cold applications only).** Close the experience part with one
+sentence explaining the badge, because many clients see it without knowing what it means. Use
+Upwork's own framing, the top 1% of *talent* on the platform, not "of designers":
+*"I'm also in Upwork's Expert-Vetted group, the top 1% of talent on the platform."* Keep it out of the
+first 225 characters; the preview belongs to the client's problem. Include it even when the experience
+line is otherwise skipped. Drop it on warm invites: those clients have already opened the profile and
+seen the badge, and repeating it reads as re-selling.
+
+The closing question, links and "never open with I" rules are unchanged. With the extra length,
+readability matters more, not less: short paragraphs, white space between parts, no block of text.
 
 ### The closing question
 
@@ -397,6 +456,10 @@ proves he looked.
 [45-60s] One line of genuinely relevant proof. A brand, a comparable job, a number.
 [60-75s] The ask, matching the letter's question. "Send me a message and I'll walk you through it."
 ```
+
+On Upwork, the script follows the same order as the letter so the two tell one story: the
+understanding at 5-15s, the problem shown on their material at 15-35s, the solution at 35-50s, then
+proof and the ask. The Expert-Vetted line stays in the letter; don't spend spoken seconds on it.
 
 Write it as spoken language, contractions and all. Read it aloud in your head; if a sentence needs a
 second breath, cut it. Mark the on-screen action in square brackets so Mehmet knows what to show.
@@ -460,7 +523,9 @@ COVER LETTER  ([platform] · [n] words)
 ---
 PREVIEW CHECK
 [The first 225 characters, quoted exactly, with the character count. This is what the client sees
-before opening. Confirm it contains their goal, the proof, and a hint of the how.]
+before opening. Confirm it contains their goal, the proof, and a hint of the how. On Upwork, also
+confirm the letter follows understanding → problem → solution → (experience) → question, that the
+problem goes beyond the brief, and that the Expert-Vetted line is present on a cold application.]
 
 ---
 VIDEO SCRIPT (~[n] seconds)
