@@ -655,19 +655,31 @@ function ac(){
   if (actx.state === "suspended") actx.resume();
   return actx;
 }
+let mix = null;
+function bus(){ const a = ac(); if (!mix){ mix = a.createGain(); mix.connect(a.destination); } return mix; }
+/* Celebration voice (ElevenLabs, Elif Kaya). Published next to the page; if it is missing the party simply runs without it. */
+const voice = new Audio("tebrikler-poyraz.mp3");
+voice.preload = "auto";
+function duck(level, secs){ const a = ac(); if (!a) return; const g = bus().gain; g.cancelScheduledValues(a.currentTime); g.setTargetAtTime(level, a.currentTime, secs); }
+voice.addEventListener("ended", () => duck(1, .4));
+function playVoice(){
+  if (!S.sound) return;
+  try { voice.currentTime = 0; duck(.25, .15); const p = voice.play(); if (p && p.catch) p.catch(() => duck(1, .2)); } catch(e) {}
+}
+function stopVoice(){ try { voice.pause(); } catch(e) {} duck(1, .1); }
 const N = m => 440 * Math.pow(2, (m-69)/12);
 function tone(f, t, dur, type, vol){
   const a = ac(); if (!a) return;
   const o = a.createOscillator(), g = a.createGain();
   o.type = type || "sine"; o.frequency.setValueAtTime(f, t);
   g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol || .12, t + .012); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-  o.connect(g).connect(a.destination); o.start(t); o.stop(t + dur + .05);
+  o.connect(g).connect(bus()); o.start(t); o.stop(t + dur + .05);
 }
 function kick(t){
   const a = ac(); const o = a.createOscillator(), g = a.createGain();
   o.frequency.setValueAtTime(140, t); o.frequency.exponentialRampToValueAtTime(42, t + .14);
   g.gain.setValueAtTime(.32, t); g.gain.exponentialRampToValueAtTime(0.0001, t + .18);
-  o.connect(g).connect(a.destination); o.start(t); o.stop(t + .2);
+  o.connect(g).connect(bus()); o.start(t); o.stop(t + .2);
 }
 let noiseBuf = null;
 function hat(t){
@@ -676,7 +688,7 @@ function hat(t){
   const s = a.createBufferSource(), f = a.createBiquadFilter(), g = a.createGain();
   s.buffer = noiseBuf; f.type = "highpass"; f.frequency.value = 7000;
   g.gain.setValueAtTime(.05, t); g.gain.exponentialRampToValueAtTime(0.0001, t + .04);
-  s.connect(f).connect(g).connect(a.destination); s.start(t);
+  s.connect(f).connect(g).connect(bus()); s.start(t);
 }
 function sfx(kind){
   if (!S.sound) return; const a = ac(); if (!a) return; const t = a.currentTime + .01;
@@ -709,8 +721,8 @@ function paintSound(){
   $("#soundBtn").innerHTML = S.sound ? ICON_ON : ICON_OFF;
   $("#musicBtn").innerHTML = (S.sound ? ICON_ON : ICON_OFF) + (S.sound ? "Müziği Kapat" : "Müziği Aç");
 }
-$("#soundBtn").addEventListener("click", () => { S.sound = !S.sound; save(); paintSound(); if (!S.sound) stopMusic(); else sfx("word"); });
-$("#musicBtn").addEventListener("click", () => { S.sound = !S.sound; save(); paintSound(); if (S.sound) startMusic(); else stopMusic(); });
+$("#soundBtn").addEventListener("click", () => { S.sound = !S.sound; save(); paintSound(); if (!S.sound){ stopMusic(); stopVoice(); } else sfx("word"); });
+$("#musicBtn").addEventListener("click", () => { S.sound = !S.sound; save(); paintSound(); if (S.sound){ startMusic(); playVoice(); } else { stopMusic(); stopVoice(); } });
 paintSound();
 
 /* ---------- Celebration ---------- */
@@ -734,12 +746,12 @@ function openParty(withFanfare){
   $("#pHints").textContent = "İpucu " + S.hints;
   $("#party").hidden = false; document.body.style.overflow = "hidden";
   startConfetti();
-  if (S.sound){ if (withFanfare) sfx("fanfare"); setTimeout(startMusic, withFanfare ? 1000 : 50); }
+  if (S.sound){ if (withFanfare) sfx("fanfare"); setTimeout(startMusic, withFanfare ? 1000 : 50); setTimeout(playVoice, withFanfare ? 900 : 350); }
   $("#againBtn").focus({preventScroll:true});
 }
 function closeParty(){
   $("#party").hidden = true; document.body.style.overflow = "";
-  stopConfetti(); stopMusic(); render(false);
+  stopConfetti(); stopMusic(); stopVoice(); render(false);
 }
 $("#closeBtn").addEventListener("click", closeParty);
 $("#againBtn").addEventListener("click", () => { closeParty(); resetAll(); });
