@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>35milimetre</title>
+  <meta name="description" content="35milimetre is a post-production and design studio in Istanbul: retouching, compositing, CGI, packaging, illustration and AI imagery for agencies, brands and photographers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Fixed chrome lives outside the smoother so it stays put. -->
+  <header class="nav">
+    <a class="nav__logo" href="#top" aria-label="35milimetre, back to top">35<span>milimetre</span></a>
+    <p class="nav__tc" aria-hidden="true"><span class="nav__reel">REEL 01</span> <span id="timecode">00:00:00:00</span></p>
+    <a class="nav__cta" href="#contact">Start a project</a>
+  </header>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main id="top">
+
+        <!-- HERO: pinned; scrolling builds the composite layer by layer -->
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+          <h1 class="hero__title" id="hero-title">Every frame is a composite.</h1>
+
+          <div class="hero__stage">
+            <div class="frame" id="hero-frame">
+              <div class="scene" aria-hidden="true">
+                <div class="l l-plate"></div>
+                <div class="l l-shadow"></div>
+                <div class="l l-subject"><div class="plinth"></div><div class="bottle"><span class="bottle__cap"></span><span class="bottle__label">35</span></div></div>
+                <div class="l l-light"><span class="streak"></span></div>
+                <div class="l l-grade"></div>
+              </div>
+              <span class="crop crop--tl" aria-hidden="true"></span>
+              <span class="crop crop--tr" aria-hidden="true"></span>
+              <span class="crop crop--bl" aria-hidden="true"></span>
+              <span class="crop crop--br" aria-hidden="true"></span>
+
+              <ol class="stack" aria-label="Layer stack, top to bottom">
+                <li class="stack__item" data-layer="5"><i></i><span>Grade</span><em>Soft light</em><b>100</b></li>
+                <li class="stack__item" data-layer="4"><i></i><span>Light wrap</span><em>Screen</em><b>80</b></li>
+                <li class="stack__item" data-layer="3"><i></i><span>Contact shadow</span><em>Multiply</em><b>65</b></li>
+                <li class="stack__item" data-layer="2"><i></i><span>Hero product</span><em>Normal</em><b>100</b></li>
+                <li class="stack__item" data-layer="1"><i></i><span>Background plate</span><em>Normal</em><b>100</b></li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="hero__foot">
+            <p class="hero__sub">Post-production and design from Istanbul. Retouching, compositing, CGI and AI imagery for brands that care about the last 5%.</p>
+            <p class="hero__cue" aria-hidden="true"><span></span>Scroll to build the shot</p>
+          </div>
+        </section>
+
+        <!-- MANIFESTO: words light up as you read -->
+        <section class="manifesto" aria-label="About the studio">
+          <p class="eyebrow">About</p>
+          <p class="manifesto__text" id="manifesto">
+            We are 35milimetre, a post-production and design studio in Istanbul. Three people: a compositor with 26 years behind the desk, a graphic designer and a 3D artist. When a job needs more hands, we bring in people we trust. We are not experts in everything, but when we take on a project, we know we can deliver it.
+          </p>
+          <p class="manifesto__aside" data-speed="0.9">Over the last year we added AI image generation to the pipeline. It is one more plate in the stack, finished by the same hands.</p>
+        </section>
+
+        <!-- SERVICES: pinned horizontal film strip -->
+        <section class="strip" id="services" aria-labelledby="services-title">
+          <div class="strip__viewport">
+            <ul class="strip__track">
+              <li class="card card--title">
+                <p class="card__edge"><span>▸ 11A</span><span>35MM · LEADER</span></p>
+                <div class="card__title">
+                  <p class="eyebrow">Services</p>
+                  <h2 class="h2" id="services-title">If it involves visualisation, we can do it.</h2>
+                </div>
+              </li>
+              <li class="card">
+                <p class="card__edge"><span>▸ 12</span><span>35MM · RETOUCH</span></p>
+                <div class="card__vis vis-retouch" aria-hidden="true"><div class="vis-in"><i></i><i></i><i></i><i></i></div></div>
+                <h3>Retouching &amp; compositing</h3>
+                <p>Multi-plate composites, product and automotive retouching, skin and surface work that survives a billboard crop.</p>
+              </li>
+              <li class="card">
+                <p class="card__edge"><span>▸ 12A</span><span>35MM · CGI</span></p>
+                <div class="card__vis vis-cgi" aria-hidden="true"><div class="vis-in"><i></i></div></div>
+                <h3>CGI &amp; 3D</h3>
+                <p>Product renders, packshots and full CGI scenes, matched to photography so nobody can find the seam.</p>
+              </li>
+              <li class="card">
+                <p class="card__edge"><span>▸ 13</span><span>35MM · PACK</span></p>
+                <div class="card__vis vis-pack" aria-hidden="true"><div class="vis-in">
+                  <svg viewBox="0 0 200 140" fill="none"><path d="M40 30h40v80H40zM80 30h50v80H80zM130 30h40v80h-40zM80 10h50v20H80zM80 110h50v20H80z" /><path class="dash" d="M40 30h130M40 110h130" /></svg>
+                </div></div>
+                <h3>Packaging</h3>
+                <p>From dieline to shelf: structure, artwork and the photoreal mockups that sell it before it is printed.</p>
+              </li>
+              <li class="card">
+                <p class="card__edge"><span>▸ 13A</span><span>35MM · ILLUS</span></p>
+                <div class="card__vis vis-illus" aria-hidden="true"><div class="vis-in">
+                  <svg viewBox="0 0 200 140" fill="none"><path d="M10 110C40 40 70 30 100 70s60 40 90-40" /><path d="M10 125c50-20 90-10 180-30" /></svg>
+                </div></div>
+                <h3>Custom illustration</h3>
+                <p>Editorial, product and key-visual illustration, drawn for the brand instead of pulled from a library.</p>
+              </li>
+              <li class="card">
+                <p class="card__edge"><span>▸ 14</span><span>35MM · AI</span></p>
+                <div class="card__vis vis-ai" aria-hidden="true"><div class="vis-in"><i></i></div></div>
+                <h3>AI imagery</h3>
+                <p>Generated plates and concepts, art-directed and taken through the same retouching pipeline as everything else.</p>
+              </li>
+              <li class="card">
+                <p class="card__edge"><span>▸ 14A</span><span>35MM · DESIGN</span></p>
+                <div class="card__vis vis-type" aria-hidden="true"><div class="vis-in"><span>Aa</span></div></div>
+                <h3>Design</h3>
+                <p>Key visuals, campaign layouts and brand assets, built by the people who also finish the images.</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- WIPE: raw plate vs finished frame -->
+        <section class="wipe" id="wipe" aria-labelledby="wipe-title">
+          <div class="wipe__head">
+            <p class="eyebrow">Before / after</p>
+            <h2 class="h2" id="wipe-title">Raw in. Finished out.</h2>
+          </div>
+          <div class="wipe__frame">
+            <div class="scene scene--raw" aria-hidden="true">
+              <div class="l l-plate"></div>
+              <div class="l l-subject"><div class="plinth"></div><div class="bottle"><span class="bottle__cap"></span><span class="bottle__label">35</span></div></div>
+              <div class="l l-dirt"><i class="wire"></i><i class="dust d1"></i><i class="dust d2"></i><i class="dust d3"></i><i class="dust d4"></i></div>
+            </div>
+            <div class="scene scene--final" aria-hidden="true">
+              <div class="l l-plate"></div>
+              <div class="l l-shadow"></div>
+              <div class="l l-subject"><div class="plinth"></div><div class="bottle"><span class="bottle__cap"></span><span class="bottle__label">35</span></div></div>
+              <div class="l l-light"><span class="streak"></span></div>
+              <div class="l l-grade"></div>
+            </div>
+            <div class="wipe__handle" aria-hidden="true"><span>RAW</span><span>FINAL</span></div>
+            <ul class="notes" aria-label="What changed">
+              <li style="--x:22%; --y:22%">Power line removed</li>
+              <li style="--x:46%; --y:58%">Sensor dust cleaned</li>
+              <li style="--x:62%; --y:84%">Contact shadow built</li>
+              <li style="--x:80%; --y:30%">Grade: split tone</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- MARQUEE: scroll-velocity aware -->
+        <section class="marquee" aria-label="Who we work with">
+          <div class="marquee__row" data-dir="1">
+            <div class="marquee__inner"><span>Ad agencies</span><span>Start-ups</span><span>Brands</span><span>Photographers</span><span>Ad agencies</span><span>Start-ups</span><span>Brands</span><span>Photographers</span></div>
+          </div>
+          <div class="marquee__row marquee__row--alt" data-dir="-1">
+            <div class="marquee__inner"><span>Technology</span><span>Automotive</span><span>Packaging</span><span>Campaigns</span><span>Technology</span><span>Automotive</span><span>Packaging</span><span>Campaigns</span></div>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+          <p class="eyebrow">Contact</p>
+          <h2 class="contact__title" id="contact-title">Got a frame that isn't finished yet?</h2>
+          <p class="contact__body">Send the brief, the plates, or just the idea. We will tell you plainly what is possible and what it takes.</p>
+          <a class="contact__link" href="https://www.35milimetre.com" target="_blank" rel="noopener"><span>35milimetre.com</span></a>
+          <footer class="foot">
+            <span>Istanbul, Turkey</span>
+            <span>© 2026 35milimetre</span>
+          </footer>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollSmoother.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
