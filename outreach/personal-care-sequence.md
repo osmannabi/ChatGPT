@@ -3,6 +3,8 @@
 Sequence: "Personal Care — Freelance Creative Outreach" (Apollo.io, currently inactive)
 Reviewed: October 10, 2026. Approved after four review rounds by three reviewers: an outbound and deliverability expert, a personal care brand buyer, and a voice and fact checker.
 
+**Status:** applied in Apollo on October 10, 2026. The sequence is still inactive. Section 5 lists the settings you still need to change yourself.
+
 ## 1. What was wrong with the current version
 
 | # | Issue | Why it matters |
@@ -47,10 +49,11 @@ Task note: if their profile or company page shows one real product detail, repla
 > Facts first: Do not invent facts about their brand. Mention a launch, retailer, date, news or packaging change only if the company research states it. Never mention mission, values, ingredient philosophy, or anything about the reader personally. Call only L'Oréal, Eucerin and Unilever clients. Never write placeholder brackets. Do not change, shorten or merge the quoted sentences.
 > Voice: Use the tone sample for voice only; never reuse its names, offers or questions. Plain American English, like a person, not a marketer. Every sentence under 20 words. Mostly periods; at most one semicolon or colon in the email; no em dashes; no exclamation marks. "We" for studio work, "I" for Mehmet's own view. Never use: elevate, stunning, high-end, leverage, seamless, cutting-edge, game-changer, unlock, world-class, simply, easy, utilize, "creative partner", "surge capacity", "I hope this email finds you well", "quick question", "just following up", "circling back", "touching base".
 
-### Step 1: subject line prompt
-> Write a subject line of 2 to 5 words. Format: the brand, product or category named in the company research, then "visuals" or "renders". Sentence case. No question mark, no emoji, no numbers, no exclamation mark. Never use: quick, opportunity, partnership, collab, offer, free, boost. It should read like a note from a colleague.
+### Step 1: subject line
 
-Fallback, only if Apollo will not take a subject prompt: the fixed subject "{{company_name}} product renders".
+**Live now:** the fixed subject "{{company_name}} product renders". Apollo's API does not accept a subject-line prompt, so the fallback was applied. To use AI subjects instead, paste the prompt below into the Step 1 subject field in the Apollo editor.
+
+> Write a subject line of 2 to 5 words. Format: the brand, product or category named in the company research, then "visuals" or "renders". Sentence case. No question mark, no emoji, no numbers, no exclamation mark. Never use: quick, opportunity, partnership, collab, offer, free, boost. It should read like a note from a colleague.
 
 ### Step 1: email prompt (Day 0)
 > Write a cold email from Mehmet Turan, who runs 35milimetre, to a Creative Director, Marketing Director or Brand Manager at a personal care or beauty brand. Use this order:
