@@ -1,5 +1,12 @@
 # Platform playbooks
 
+## Contents
+- Upwork
+- Fiverr
+- Behance
+- LinkedIn / email / direct
+- Quick comparison
+
 Read only the section for the platform the user named in Step 0.
 
 Each platform has a different reader in a different state of mind. Upwork and Fiverr readers are
@@ -19,7 +26,7 @@ rewrite it three times, and count the characters. If it runs long, cut adjective
 substance.
 
 **Length:** 180-260 words total, longer than the other platforms on purpose. Upwork letters use the
-problem-first structure in SKILL.md Step 4 (*Upwork structure*): understanding, the problem as we
+problem-first structure in SKILL.md Step 4 (*Upwork structure*, detailed in the Upwork letter reference listed in SKILL.md): understanding, the problem as we
 define it, the solution, optional experience plus the Expert-Vetted line on cold applications, one
 question. The extra words go to thinking through the problem, not to credentials. Keep it
 scannable: short paragraphs with white space between them.
@@ -61,7 +68,7 @@ you a fixed quote once I understand the scope" than quote an hourly rate.
 sellers. Less crowded than Upwork, but the offer mechanics do a lot of the talking, so the message
 has to set up the offer rather than duplicate it.
 
-**Before writing anything on Fiverr, run Step 1b and read `references/deal-sequencing.md`.** Fiverr
+**Before writing anything on Fiverr, run Step 1b and read the deal-sequencing reference listed in SKILL.md.** Fiverr
 is where the 30-thread review was done, and it is the only platform where the skill asks Mehmet
 whether to send a qualifying message or a full quote. The dominant failure mode here is a good, long
 offer landing before the buyer has decided their own scope or budget.

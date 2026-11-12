@@ -37,7 +37,7 @@ correlate with silence in the archived-thread review. Structure it as:
 > approved, the same setup runs across the remaining [quantity]; indicative **$Y-$Z** for the full
 > set.
 
-The pilot ladder in `references/deal-sequencing.md` says what "first stage" means for each service
+The pilot ladder in the deal-sequencing reference (listed in SKILL.md) says what "first stage" means for each service
 type and what it should cost.
 
 **Then say what moves the rollout number.** Name the two or three variables that decide where it
@@ -61,7 +61,7 @@ for a senior specialist.
 **When they say it's too expensive, give paths, not explanations.** A price objection is usually a
 real constraint. Justifying the cost does not give the buyer anything they can actually buy. Offer
 full scope, a starter scope at one concrete component, or a paid consultation / production spec if
-they will execute it elsewhere. See `references/deal-sequencing.md`.
+they will execute it elsewhere. See the deal-sequencing reference listed in SKILL.md.
 
 **Recurring beats one-off at the same rate.** Where a brief hints at ongoing volume (seasonal
 campaigns, monthly SKU additions, a growing catalogue), a monthly arrangement is worth proposing

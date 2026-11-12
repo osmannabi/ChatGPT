@@ -1,5 +1,13 @@
 # Deal sequencing: why good proposals go quiet
 
+## Contents
+- The finding
+- The pilot ladder
+- The recommended sequence
+- Handling the reply
+- Follow-ups
+- Standing rules
+
 Source: a qualitative review of 30 archived Fiverr conversations (15 August 2026), each read
 alongside the proposal sent, the buyer's subsequent messages, and the terminal outcome. It
 supplements an earlier inbox review and reaches the same conclusion.
