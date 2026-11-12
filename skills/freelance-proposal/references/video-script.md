@@ -1,12 +1,12 @@
-# Video script (SKILL.md Step 5)
+# Video script (on request only)
 
-Moved out of SKILL.md. Read this when writing the video script. Strict on length (45-75 seconds, 110-180 spoken words); the timing template is a default and can flex with the material.
+Read this only when Mehmet asks for a video script. Strict on length (45-75 seconds, 110-180 spoken words); the timing template is a default and can flex with the material.
 
 ---
 
-Mehmet records a short video for most applications. This is the single biggest differentiator
-available right now: clients receive forty text proposals and zero videos, and a post-production
-artist showing craft on screen is far more persuasive than one describing it.
+A short video is a strong differentiator when Mehmet chooses to record one: most clients receive
+text proposals only, and a post-production artist showing craft on screen is more persuasive than
+one describing it.
 
 **45-75 seconds. 110-180 spoken words. No intro card, no music, no "hope you're well".**
 
@@ -25,8 +25,9 @@ proves he looked.
 ```
 
 On Upwork, the script follows the same order as the letter so the two tell one story: the
-understanding at 5-15s, the problem shown on their material at 15-35s, the solution at 35-50s, then
-proof and the ask. The Expert-Vetted line stays in the letter; don't spend spoken seconds on it.
+observation at 5-15s, why it is hard shown on their material at 15-35s, how he'd do it and the first
+step at 35-50s, then proof and the ask. The Expert-Vetted mention stays in the letter; don't spend
+spoken seconds on it.
 
 Write it as spoken language, contractions and all. Read it aloud in your head; if a sentence needs a
 second breath, cut it. Mark the on-screen action in square brackets so Mehmet knows what to show.

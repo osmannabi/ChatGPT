@@ -53,6 +53,10 @@ The fix is to propose the smallest credible first stage with a fixed price and a
 deliverable, then name the rollout only after it is accepted. It converts a difficult yes/no into a
 bounded one, and it is honest: the first piece genuinely carries the setup cost.
 
+These bands are for **warm leads and round two**. On a cold first message the first number is
+$400 or less in every lane (SKILL.md Step 5): shrink the first stage until it fits, for example one
+hero render with no lighting variants, or one flat label direction.
+
 | Job type | First stage | Rough band |
 |---|---|---|
 | Product / CPG retouch or compositing, multi-image | One hero image, fully finished, to lock the look | $150 – $400 |
@@ -81,7 +85,8 @@ unfamiliar. Those are where a buyer's risk is highest and a fixed small step is 
 2. **Confirm one deal-critical constraint**: budget, deadline, platform, quantity, or existing assets.
 3. **Propose the smallest credible first stage** with a fixed price and an objective deliverable.
 4. **Name the rollout path** only after the first stage is accepted.
-5. **Follow up once** after 4-7 days, tailored, with an opt-out and a lower-scope alternative.
+5. **Follow up only when Mehmet asks, and never on Upwork** (SKILL.md): once, tailored, with an
+   opt-out and a lower-scope alternative.
 
 ### Example first response
 
@@ -103,9 +108,9 @@ go to the three paths below rather than quietly cutting quality.
 Price objections are usually a real constraint, not a negotiating move. Explaining *why* the work
 costs what it costs does not give them anything to buy. Offer three explicit paths:
 
-1. **Full scope** — the original price and outcome.
-2. **Starter scope** — one concrete component at a lower price.
-3. **Advice or handoff** — a paid consultation or a production specification if they'll execute it
+1. **Full scope:** the original price and outcome.
+2. **Starter scope:** one concrete component at a lower price.
+3. **Advice or handoff:** a paid consultation or a production specification if they'll execute it
    elsewhere.
 
 ### They want proof before committing
@@ -135,7 +140,8 @@ The message that failed, repeatedly, was: *"Hi, just checking in regarding my pr
 call?"* It names nothing specific, reduces no risk, offers no new option, and makes no decision
 easier. It was the terminal outbound in a large share of archived threads.
 
-A follow-up has to carry something new. Send once, 4-7 days out, and always with a clean way to say
+Follow-ups are written only when Mehmet asks, and never for Upwork. A follow-up has to carry
+something new. Send once, 4-7 days out, and always with a clean way to say
 no; giving someone permission to decline is what makes them answer at all.
 
 > "You mentioned the project needed [specific outcome]. I can reserve the smaller [pilot/template]
@@ -158,4 +164,4 @@ Never reuse the same follow-up across prospects. The specificity is the entire m
 - A call is never the only path forward, and rarely the best first one.
 - Surface tool, ownership, print-production and implementation constraints before proposing.
 - Answer a direct price question with a price.
-- One tailored follow-up, never a generic one.
+- A follow-up only on request: one, tailored, never generic, never on Upwork.

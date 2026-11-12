@@ -1,6 +1,6 @@
 # Go/no-go checks (SKILL.md Step 1)
 
-Moved out of SKILL.md to keep it short. Read this at Step 1, before writing. The read is advice, not a veto: unless Mehmet says otherwise, write the proposal anyway.
+Depth for SKILL.md Step 1. Read it on a cold application. The read is advice, not a veto: it ends in a verdict (APPLY, APPLY SHORT or SKIP, defined in SKILL.md), and unless Mehmet says otherwise the letter is written anyway.
 
 ## Contents
 - 1. Is the job alive?
@@ -33,7 +33,9 @@ is available and the Upwork tools are connected, look the post up and use the re
 before with good ratings · brief reads like a human wrote it (short, specific, slightly untidy) ·
 budget or spend history in the right band · the deliverable is genuinely in Mehmet's service areas.
 
-**Amber:** posted 1-2 days ago · 20-50 proposals · vague scope · no named deliverable count.
+**Amber:** posted 1-2 days ago · 20-50 proposals · vague scope · no named deliverable count · the
+client is already interviewing several freelancers or has sent several invites (a shortlist is
+forming; name the numbers when they are visible).
 
 **Red:** posted 3+ days ago · client's own review score is poor (e.g. 3.0 across 12 reviews; that
 means they are hard to work with) · many job posts and few hires · budget signals commodity pricing ·
@@ -52,7 +54,7 @@ elsewhere?
 On Behance specifically, check the live post for a "days left to close" countdown and note it in your
 read if it's there: a post with few days left is genuinely fresher and worth moving on quickly, one
 with none shown just means Behance isn't surfacing it, not that it's stale. **Never invent this
-number** if the post doesn't display it. (Step 7 captures this same figure into `Behance Days Left`
+number** if the post doesn't display it. (Step 6 captures this same figure into `Behance Days Left`
 when the proposal gets logged, so the read here and what ends up in the tracker should match.)
 
 A short, blunt, slightly scruffy brief is a *good* sign, not a bad one. It usually means a real
@@ -70,6 +72,8 @@ rather than read. Craft cannot be demonstrated in a list where everybody asserts
 
 Generic brief plus a crowded category is a no even when the work would be easy. Say so, then write
 the letter anyway if Mehmet wants it; that call is his.
+
+A short, plain, specific brief is the APPLY SHORT case: a real buyer, answered with the short form.
 
 This check needs a public post to judge. On cold email or LinkedIn outreach there isn't one, so skip
 it and go to check 3.
@@ -106,7 +110,8 @@ wants the read, not a veto. Two parts to the flag: that the profile will not bac
 letter is about to make, and the one concrete fix (a specialized profile, a portfolio project moved
 to the top, a headline that names the category). Then route around it inside the letter: lead with
 the closest thing the profile already owns, pick the portfolio page that does show the work under the
-normal link rules in Step 4, and expect a lower open rate than the brief's quality suggests.
+normal link rules in Step 4, name it in the ATTACH block, and expect a lower open rate than the
+brief's quality suggests.
 
 There is a slower question underneath this one. Every proposal, completed project and review is a
 signal, and those signals decide which work arrives unprompted later. Advertising more services does
@@ -141,6 +146,7 @@ chosen out of a crowd of strangers; check 2 additionally needs a public post to 
 apply to cold outreach.
 
 **Warm** means they came to him: an invite, a buyer who messaged first, a Behance or email inquiry.
+A Behance job-list post he found is cold, not warm.
 They have already looked and already chose to approach him, so both questions are settled. Run checks
 1 and 4 only, in the reinterpreted form above, and never talk him out of a warm lead on positioning
 grounds.

@@ -33,9 +33,11 @@ and a real past quote beats a benchmark.
 deciding, and a full-scope number asks for a big commitment before they have seen anything; both
 correlate with silence in the archived-thread review. Structure it as:
 
-> First stage: one [hero image / product build / test clip], **$X**, delivered by [date]. Once
-> approved, the same setup runs across the remaining [quantity]; indicative **$Y-$Z** for the full
-> set.
+> I'd start with one [hero image / test clip / concept], **$X**, delivered in [n] days.
+
+On a cold first message X is $400 or less in every lane, and the full-set figure stays in the
+PRICING block for Mehmet unless the client asked for a total or stated a budget (SKILL.md Step 5).
+The ranges in the table above are for that block and for later rounds, not for the first letter.
 
 The pilot ladder in the deal-sequencing reference (listed in SKILL.md) says what "first stage" means for each service
 type and what it should cost.
@@ -45,9 +47,8 @@ lands: number of deliverables, whether usable assets exist, background complexit
 deadline pressure. A range is fine *here*, attached to a defined scope, because by this point it is
 describing variables rather than confessing uncertainty.
 
-**Fixed price, not hourly.** Mehmet prefers project fees. Where a job could go either way, the
-framing is: *"I'd rather give you a fixed quote once I understand the scope."* It sounds more
-confident than an hourly rate and it protects both sides.
+**Fixed price, not hourly.** Mehmet prefers project fees. On an hourly Upwork post the bid field
+carries his rate ($55/hr) and the letter offers the first step as a fixed milestone.
 
 **Volume changes the per-unit price, and saying so is a selling point.** Twelve images in one recipe
 costs less per image than twelve one-offs, because the first one carries the setup. Naming that

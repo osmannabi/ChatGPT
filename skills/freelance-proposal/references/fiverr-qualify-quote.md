@@ -1,6 +1,6 @@
 # Fiverr: QUALIFY or QUOTE (SKILL.md Step 1b)
 
-Moved out of SKILL.md. Read this on every Fiverr job before writing. It runs on Fiverr and nowhere else.
+Depth for SKILL.md Step 1b. Read this on every Fiverr job before writing.
 
 **This step runs on Fiverr and nowhere else.** Upwork, Behance and email go straight on to Step 2
 with the full proposal. The reason is that the evidence behind it is Fiverr data: 30 archived Fiverr
@@ -38,7 +38,8 @@ Pick the first stage from the pilot ladder in the deal-sequencing reference list
 
 ## QUOTE output
 
-The full thing: staged pricing, scope statement, the lot, as laid out in Steps 4-6.
+The default output in SKILL.md: the letter, ATTACH, the priced first step, held-back questions.
+A scope statement only when Mehmet asks for one.
 
 ## Round two: Mehmet pastes the buyer's reply
 

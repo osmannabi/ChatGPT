@@ -1,6 +1,10 @@
 # Reading the funnel when proposals are not landing (SKILL.md Step 8)
 
-Moved out of SKILL.md. Read this when Mehmet asks why proposals are not landing or why he is not getting replies.
+Depth for SKILL.md Step 8. Read this when Mehmet asks why proposals are not landing or why he is not getting replies.
+
+Baseline when this was written (2026-11-12): of 63 cold Upwork rows marked Sent in the tracker, 22
+were viewed and 6 got a reply. Viewed is a floor, since the sync only ticks rows that carry an
+Upwork Proposal ID. So the larger leak was before the letter was opened.
 
 Most freelancers track one number, hired or not, and by the time that answer arrives it teaches
 nothing. A rejection says *no*; a stage says *what to fix*. That is what the tracker's three boxes
@@ -8,7 +12,7 @@ are for.
 
 | Where the client stopped | What it usually means | What to change |
 |---|---|---|
-| Proposal never viewed | Wrong jobs, or invisible in a crowded list | Job selection first (Step 1 check 2), then the preview line and how fast the proposal went out |
+| Proposal never viewed | Wrong jobs, or invisible in a crowded list | Job selection first (the Step 1 verdict), then the preview line and how fast the proposal went out |
 | Viewed, no profile visit | The opening didn't earn the click: either it led with background instead of their problem, or there was nothing true to say because the positioning doesn't cover this work | Rewrite the first two lines around their problem. If one category keeps stalling here, it is Step 1 check 3, and the fix is the profile rather than the letter |
 | Profile visited, no reply | The profile didn't confirm what the letter promised | Surface the matching work at the top; tighten the headline toward what he actually wants to sell |
 | Replied, no hire | Later stage: scope, price, terms, or the conversation itself | The deal-sequencing reference listed in SKILL.md; usually a sequencing problem, not a writing one |
