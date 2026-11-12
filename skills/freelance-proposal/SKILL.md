@@ -1,719 +1,407 @@
 ---
-name: freelance-proposal
-description: "Write platform-tailored freelance proposals and cover letters for Mehmet Turan / 35milimetre. Use whenever a project brief, job listing, buyer request, Fiverr Brief, Behance inquiry, client email or job screenshot is pasted and a proposal, cover letter, application, reply, bid or pitch is wanted. Triggers: \"write a proposal for this\", \"how should I reply to this job\", \"help me bid on this\", \"draft an application\", \"should I apply to this\", \"write a cover letter\", \"reply to this client\", proposing Figma Weave instead of ComfyUI, and diagnostics like \"why am I not getting replies\" or \"is this job worth the connects\". Asks which platform the job came from, then gives a go/no-go read scoring liveness, client specificity, positioning alignment and capability fit, plus a scannable cover letter, a 45-75s video script, held-back questions, staged pricing, a scope statement and a follow-up."
+name: "freelance-proposal"
+description: "Write Mehmet Turan's (35milimetre) first-message freelance proposals for Upwork, Fiverr, Behance, Contra, LinkedIn or email from a brief, job link or Notion row, and log them to the Proposal Tracker."
 ---
 
-# Freelance Proposal Writer — Mehmet Turan / 35milimetre
+# Freelance Proposal Writer: Mehmet Turan / 35milimetre
+
+Skill version: 2026-11-12.
 
 Mehmet is a post-production artist and art director in Istanbul with 26 years in commercial imagery.
 35milimetre is his studio: three people (Mehmet, a graphic designer, a 3D artist), plus trusted
-specialists when a job needs them. No account managers in the middle; the client talks to the person
-doing the work.
+specialists when a job needs them. The client talks to the person doing the work.
 
-Documented client work includes Google, Apple, Renault, Peugeot, Diageo, PepsiCo, Unilever,
-Starbucks, Coca-Cola, Eucerin, Panasonic, Lotus, US Postal Service, Pladis, MAC and ZF. Creativepool
-"Top 25 Influential and Inspiring Retouchers & CGI Artists" since 2018. Expert-Vetted on Upwork.
+This skill has one job: turn a brief into a first message that sells one small first step, and log
+it so the system learns what gets replies.
 
----
+## Must-not-miss rules
 
-## The one idea that drives everything here
-
-**The job of the first message is to earn one decision. Not to win the project.**
-
-That single sentence resolves the two things that kill Mehmet's proposals, and they are different
-problems with the same fix.
-
-**Problem one: not getting opened.** Every platform buries a client under AI-written applications.
-They are skimmed and discarded in seconds. The preview decides everything: the first ~225 characters
-in Upwork's list view, the first two lines on Fiverr, the subject line in email. Once opened, the
-client is asking *does this person understand my problem?*, not *is this person impressive.*
-Credentials answer the wrong question.
-
-**Problem two: getting opened and then going quiet.** This is the bigger one, and it is invisible
-because it looks like success. A review of 30 archived Fiverr threads found that long, well-crafted
-proposals repeatedly became the *last message in the thread*: full deliverable systems, workflow
-detail, revision counts, technical reasoning, links, and long discovery question lists, followed by
-silence. The craft was not the problem. The problem was arriving before the buyer had decided their
-own scope, budget, or technical direction, which meant they had to evaluate a whole project in order
-to answer at all. Faced with that, they answer nothing.
-
-So a complete, impressive proposal sent to an undecided buyer performs *worse* than a short one. The
-full picture of the evidence is in `references/deal-sequencing.md`; read it whenever a brief looks
-big, vague, or early.
-
-**What this means in practice:** find the one decision this buyer can actually make right now, and
-build the whole message around it. Usually that decision is either *"yes, my budget band is roughly
-X"* or *"yes, start with one image and show me."* Everything else is held back for message two.
+- **The letter sells one small first step, not the project.** Every cold hire in 12 months of Upwork data began as a $190 to $240 first job. A cold letter names one first step with a price at or under $400 and a delivery time, in every lane (Step 5). Never a number above the client's stated budget, never a rate card, never a cost caveat.
+- **Look first, and say only what you saw.** Open the client's site, listing or files before writing (Step 2). A statement about their material must come from that looking. If there was nothing to look at, use the short form and do not tell them what their job "really" is.
+- **Name one concrete detail from the client's own brief, files or site.** Every letter that got a reply did; no generic letter did.
+- **Claims come only from the Claims List** on the Notion *Proposal System* page (Step 0). A brand, award, tool or current project that is not on it never appears in a letter, even if an older letter used it. **Never name Apple.**
+- **Never invent anything:** job stats (proposal count, post age, client history), a track record, a comparable project, a result, an attachment title, a fact about the client's business. If it is not visible, say what is missing.
+- **Answer what the client explicitly asked, first.** If the brief lists questions or asks for quotes, each gets a one-line answer. Those answers replace the middle of the letter; they are not added on top.
+- **Two lengths, both ceilings.** Short form 70 to 110 words. Standard form up to 180 (Step 4).
+- **One question, one call to action.** A call is never the default ask.
+- **Default output is short:** go/no-go with a verdict, letter, preview check, attachments, staged price, held-back questions. Video script, scope statement and follow-up are written **only when Mehmet asks**. **Never draft a follow-up for Upwork.**
+- **Links:** never `35milimetre.com` on Upwork or Fiverr. Use `mehmet-turan.com` there. **Contra is like Behance: use `35milimetre.com`.** Only paths from the link map.
+- **Contra: never apply unattended.** Only Mehmet submits, or Claude after he approves that exact letter in chat.
+- **Voice:** Mehmet's own. American spelling (color, colorway, gray, anodized). No em dashes. The first sentence is about them or the work, never about Mehmet. Sign off "Mehmet".
+- **Lessons first.** A Logged, Testing or Confirmed lesson in Proposal Lessons wins over a rule here until the next fold-in.
+- **Log every proposal, with the letter pasted word for word.** Never "see chat draft".
+- **This file wins** over the reference files, and over the Winning Proposal Patterns page on length, opener choice and first-step price. The Notion Claims List wins on claims.
 
 ---
 
-## Step 0 — Ask which platform this is for (do this first, every time)
+## How Mehmet starts a proposal
 
-Platform changes the link rules, the length, the psychology, and whether a video can even be
-attached. Writing before knowing the platform means rewriting. Use AskUserQuestion:
+Any of these, from any computer, in any chat or in the Proposal Generation project:
 
-**Question 1 — Platform:** Upwork · Fiverr · Behance · LinkedIn or email
+1. **Pasted text:** a brief, a job post, a Fiverr Brief, a Behance inquiry, an email.
+2. **An Upwork job URL or ID:** look it up with the Upwork connector (`get_job_posting`) for the real description, budget, client history, proposal count and post age. If the connector is unavailable, ask him to paste the post.
+   **A Contra job URL:** take the slug after `/opportunity/` and call `get_job_by_slug` (an `on.contra.com` link: `resolve_contra_short_url` first). If the Contra connector is unavailable, ask him to paste the post.
+3. **A Notion link:** a row in **Upwork Job Feed** (`collection://40a98023-58e3-4fbd-9553-03a8bdc7bf82`), **Contra Job Feed** (`collection://3a4de179-49c2-4caa-90ea-29eceadc530a`) or **Proposal Tracker** (`collection://7d95fdcc-4f74-42b6-90eb-58a6a9d63748`). Fetch it; the brief, score, flags and client signals are on the row. Write the result back onto that same job (Step 6), never a duplicate row.
 
-**Question 2 — How did this come to you?**
-- *Cold; I found the job and I'm applying* → competing against 20-50 others, preview is everything
-- *Warm; they invited me or messaged me first* → they already looked at the portfolio. Do not re-sell
-  it. Go straight to the work.
-
-If the user already stated the platform in their message, skip the question and proceed.
-
-Then read the matching section of `references/platforms.md` before writing anything.
+**Unattended runs** (a scheduled researcher, nobody watching): never ask questions. Pick the most likely reading, state it in the go/no-go, and write the proposal.
 
 ---
 
-## Step 1 — Give an honest go/no-go read
+## Step 0: Load context (one pass, before writing)
 
-Before writing, tell Mehmet in a short paragraph whether this job is worth the connects and the hour.
-Job selection beats proposal quality, and the gap is not small: in one freelancer's tracked
-569-proposal experiment the crowded generalist category absorbed more than 60% of the effort and got
-only 17% of its proposals *opened*, while a narrow specialist category with a tenth of the volume
-produced roughly four times more client conversations. Those numbers are borrowed from someone else's
-profile and someone else's categories, so treat them as a reason to run the checks below, not as a
-benchmark for what a product-imagery brief is worth.
+1. **Fetch the Proposal System page:** `https://app.notion.com/p/40aab27e5dae8177a866f25db92a9fd5`. It holds the **Claims List**. On a cold application, also fetch its child page **Winning Proposal Patterns** (`https://app.notion.com/p/40aab27e5dae812282a7e221decaadcf`) for real openings, closings and pricing evidence.
+2. **Read the lessons:** query Proposal Lessons (`collection://601b609b-0687-41a1-aa31-dd0764f285ae`) for `Status` in (Logged, Testing, Confirmed) whose `Platform` includes this platform or All. Apply them. Follow a Testing lesson exactly, so the test stays clean.
+3. **Platform and cold/warm.** Take them from the input when they are clear (an Upwork URL is Upwork; "they invited me" is warm). Cold means the client has not looked at Mehmet yet: an Upwork or Contra job-board application, a **Behance job-list post he found**, a cold email. Warm means they came to him: an invite, a Fiverr Brief match, a **Behance inquiry or message**, a Contra inquiry, a reply. Ask only when it is genuinely unclear.
 
-Four checks, in order. **The read is advice, not a veto: unless Mehmet says otherwise, write the
-proposal anyway and let him decide.** A no-go leads the output; it does not replace it.
+If Notion is unreachable, use the fallback Claims List at the end of this file, carry on, and say so in one line.
 
-### 1. Is the job alive?
+---
 
-Flag only what is actually visible in the brief or the job post. **Never invent these numbers.** If
-the proposal count, post age or client history isn't shown, say which signals are missing rather than
-producing a confident-sounding sentence about data nobody has. When the job is on Upwork, a URL or ID
-is available and the Upwork tools are connected, look the post up and use the real figures.
+## Step 1: Go/no-go read, ending in a verdict (advice, not a veto)
 
-**Green:** posted in the last few hours · under ~15 proposals · payment verified · client has hired
-before with good ratings · brief reads like a human wrote it (short, specific, slightly untidy) ·
-budget or spend history in the right band · the deliverable is genuinely in Mehmet's service areas.
+Two or three lines before the letter. The first line is the verdict and the one fact that drives it:
 
-**Amber:** posted 1-2 days ago · 20-50 proposals · vague scope · no named deliverable count.
+- **APPLY:** the job is alive, and it is either a lane that hires or a specific brief with something real to look at.
+- **APPLY SHORT:** alive but thin. A short plain brief, nothing findable in Step 2, an adjacent fit, or a shortlist that is already forming. Use the short form.
+- **SKIP:** a hard red flag, or two or more red signals. Still write the letter (short form) unless Mehmet has said to drop SKIPs; the call is his.
 
-**Red:** posted 3+ days ago · client's own review score is poor (e.g. 3.0 across 12 reviews; that
-means they are hard to work with) · many job posts and few hires · budget signals commodity pricing ·
-brief is obviously AI-generated boilerplate with no specifics to respond to · the work is outside
-what Mehmet has actually done.
+What feeds the verdict:
 
-Say it plainly: *"Worth applying; posted 2 hours ago, 4 proposals, verified client with 4.9 across 34
-hires."* Or: *"I'd skip this one; 3 days old and 50+ proposals, you'd be shouting into a closed
-room."*
+- **Is the job alive?** Proposal count, post age, invites sent, **how many freelancers are already interviewing**, client spend, hire rate, rating, payment verified. Only what is visible or returned by the Upwork connector. Name missing signals instead of guessing.
+- **Lane evidence (12 months of Upwork data):** AI imagery and video, and retouch or compositing with a real asset, are the only lanes that hired from cold proposals. Cold packaging on Upwork produced zero threads in a year. 3D/CGI gets replies, then dies on a four-figure first number.
+- **Specific or generic brief?** (cold only). A generic brief in a crowded category is a weak bet even if the work is easy. A short, plain brief is usually a real buyer: APPLY SHORT.
+- **Does his Upwork profile back the claim?** (cold Upwork only). If the brief points at work the profile does not show, flag it and still write.
+- **Fit check:** any tool, file type, implementation or ownership requirement Mehmet does not cover. Raise it in the letter only if it could sink the job later, paired with what he can do.
+- **Red flags:** free test demanded, off-platform contact, placeholder budget, 50+ proposals, posted 3+ days ago. Say so plainly.
+- **Can the first step fit under $400?** If the smallest honest first step costs more, say so here.
 
-Those signals exist on Upwork and, partly, on Fiverr. On a Behance, LinkedIn or email inquiry there
-is no proposal count and no rush, so check 1 becomes a different question: is there a real project
-with a real budget holder behind this, and has the inquiry been sitting long enough to have gone
-elsewhere?
+Warm leads: run only "alive" and "fit". The verdict is APPLY or APPLY SHORT. Never talk him out of a warm lead.
 
-A short, blunt, slightly scruffy brief is a *good* sign, not a bad one. It usually means a real
-person who is ready to hire and short on time. Match their energy: reply short.
+**Contra and Behance job list.** They show no proposal count, client spend or hire history, so say those are not visible; judge on the budget, the brief, the organization and the post date (Behance: the "days left to close" number when shown). Many Contra briefs are machine-written ("deliverables were not provided"): name that as a weak brief instead of inventing scope. The Upwork lane evidence is Upwork data and does not transfer. Check location limits and time zone before writing.
 
-### 2. Is the client specific, or generic? (cold marketplace posts only)
+---
 
-The more specific the client's problem, the better Mehmet's odds. A post that names a platform, a
-tool, a product type or a business context has already shrunk its own applicant pool: *"3D build of a
-swing-top bottle for an organic tequila soda, no product shot exists yet"* is a job most applicants
-skip and most of the rest cannot really do. A generic post is the opposite. *"Need product images."*
-*"Looking for a designer."* Fifty interchangeable applications arrive within hours, every one
-claiming quality and speed, the client has no basis on which to choose, and the pile gets skimmed
-rather than read. Craft cannot be demonstrated in a list where everybody asserts it.
+## Step 1b: Fiverr only: QUALIFY or QUOTE
 
-Generic brief plus a crowded category is a no even when the work would be easy. Say so, then write
-the letter anyway if Mehmet wants it; that call is his.
+Work out what the buyer has **confirmed**: scope (a deliverable count), deadline (a real date), budget (a number or band).
 
-This check needs a public post to judge. On cold email or LinkedIn outreach there isn't one, so skip
-it and go to check 3.
+- Any of the three unconfirmed: recommend **QUALIFY** and say which is missing.
+- All three confirmed: recommend **QUOTE**.
+- The buyer directly asked for a price: **QUOTE a defined first step**, whatever else is unknown.
 
-### 3. Does the profile the client will look at back the claim? (cold only)
+Ask Mehmet which way (unless unattended; then follow the recommendation).
+**QUALIFY** = one real observation, one named first step with a fixed price and a delivery time, one question for the missing constraint; no held-back list. **QUOTE** = the default output.
+**Round two** (he pastes the buyer's reply): build the QUOTE from it, carry the first observation forward, update the same tracker row. Budget band given: quote inside it, staged. "Too expensive": give full, starter and paid-advice paths. Proof first: offer a small paid proof stage. Technical mismatch: say so and name the adjacent thing he can do.
+Fiverr offers: single payment by default, milestones for multi-phase work, subscription when the brief hints at ongoing volume; $5 to $20,000, 1 to 90 days.
 
-This check catches the expensive failure, and it looks like the opposite of check 2 until you see
-what it does. Specificity only pays when the client's specificity and Mehmet's *visible* positioning
-point at the same thing. In the same tracked experiment, 29 proposals into a specific, well-defined
-category returned **zero profile views**. Not a low number: zero. The applicant was capable, the
-clients knew exactly what they wanted, the proposals were fine. Nothing in the visible positioning
-said *this is my specialty*, so nobody clicked through.
+---
 
-The question is not *can Mehmet do this.* It is *will this client believe, in seconds, that he is the
-obvious person for it,* from the headline, the skills list and the first line of the letter alone.
+## Step 2: Look before writing (really look)
 
-The gap is almost never the portfolio; `mehmet-turan.com` carries packaging, branding, illustration,
-fashion, poster and motion pages, and the studio has the work to back them. The gap is the **Upwork
-profile**, whose headline reads *"AI Video | AI Image | AI Workflow | 3D Rendering | Image
-Manipulation"* and whose skills list is product rendering, CGI, retouching, compositing, AI image and
-video generation, prompt engineering, art direction, 3D modelling and product ad campaigns.
+Open the client's material with whatever web or browser tool is available: their site, Amazon listing, shop or Instagram if a name or URL appears anywhere; the attached files; the reference they linked; the competitors they named. Note what is actually wrong or hard: lighting, edges, perspective, the reflection that gives away the composite, the label that won't hold at thumbnail size, the box that is the wrapper scaled up.
 
-| The Upwork profile sells this | Real work, but the profile doesn't say it |
+Record it in the output as **LOOKED AT**: what was opened and the one thing seen there. If a tool could not reach the page, or the post has no brand, URL or files, write "nothing findable" and say why.
+
+**Test for the opening line:** could the client have received this sentence from someone who never looked at their material? If yes, it is a statement about the craft, not about them. That is allowed only when it is framed as craft knowledge ("on jobs like this, the usual failure is..."), never dressed up as an observation.
+
+**Nothing findable means the short form.** Do not manufacture a diagnosis of a business nobody looked at.
+
+---
+
+## Step 3: One observation, one opinion
+
+- **The observation:** the thing that will make or break this job, in plain words, from what was seen. *"The pouch reads flat next to Zyn because everything is lit from one soft source; that is a lighting rebuild."*
+- **The opinion:** one stance on how to do it, with the reason. *"For six colorways I'd build it in 3D once; the variants come free and the highlights stay identical."*
+
+Give credit before the problem when it is due (*"The bar looks right already; the box is the problem."*). It reads as an honest second opinion, not a pitch.
+
+**When Mehmet's fit is adjacent, not proven,** say so and name the adjacent work: *"I believe I can help based on our experience with 3D product work and compositing."* The sentence always names the real, related experience and sits next to a link or an attachment that shows it. Never use it alone, and never with "on the subject" as the whole claim.
+
+---
+
+## Step 4: Write the letter
+
+### Pick the opener by what Step 2 found, not by habit
+
+| What you have | Opener |
 |---|---|
-| AI product video and ad variants · AI product and lifestyle imagery with the real product locked · 3D product rendering, CGI, product animation · AI workflow and pipeline build · high-end retouching, compositing, manipulation · art direction on product imagery · CPG, beverage, personal care | Brand identity and logo · packaging and label design · illustration, character, mascot · presentation and deck design · layout, editorial and general graphic design · fashion and people-led imagery · poster and banner design · motion design · architecture |
+| You saw their material (site, listing, files, reference) | The observation. "I looked at your listing: ..." is a fine start. |
+| You know their business, not the asset | Where the work will live (*"Larsen runs Meta and TikTok for DTC brands, so my guess is this poster lives in a feed as often as on a wall."*) |
+| The brief itself describes a failure or a craft problem | A reframe built on their detail (*"Matching driveway pavers around a car is all vanishing point."*) |
+| They asked for exact experience | The credential, first |
+| Warm, already talking | Name what was agreed and the next step |
+| Nothing specific to go on | Plain: their deliverable in their own words, then the first step. No reframe. |
 
-That table is a snapshot of the profile as it read in September 2026. The live version is the project
-reference doc `reference_profile_positioning`; look it up with the memory tools before relying on the
-table, since Mehmet edits the profile. Fiverr gig titles are not captured anywhere yet, so on a
-Fiverr brief ask him what his gigs actually say before running this check.
+The reframe "X is a Y job more than a Z job" became the default and every letter sounded the same. Use a "not X but Y" construction **at most once per letter**, and in the opening only in the third row above.
 
-**When the brief points at the right-hand column, flag it and write the proposal anyway.** Mehmet
-wants the read, not a veto. Two parts to the flag: that the profile will not back the claim the
-letter is about to make, and the one concrete fix (a specialized profile, a portfolio project moved
-to the top, a headline that names the category). Then route around it inside the letter: lead with
-the closest thing the profile already owns, pick the portfolio page that does show the work under the
-normal link rules in Step 4, and expect a lower open rate than the brief's quality suggests.
+### Two forms
 
-There is a slower question underneath this one. Every proposal, completed project and review is a
-signal, and those signals decide which work arrives unprompted later. Advertising more services does
-not produce more opportunities; it weakens each one, because a studio known for everything is
-memorable for nothing. When a job pulls away from the product imagery, CGI and AI video ground Mehmet
-is building on, say so in one line. It is not a reason to refuse money; it is the difference between
-work worth taking and work worth featuring afterwards.
-
-### 4. Fit check: what Mehmet genuinely cannot cover
-
-**Run this one every time, on every platform, warm or cold, before any proposal work happens.** It is
-about service, not signal: check 3 asks whether the client will believe him, this asks whether he can
-actually deliver. Scan for a required application or file type (native Blender or Cycles scenes,
-editable source files, a specific automation platform), full implementation rather than asset
-delivery, print production management, deep engineering, or an ownership and licensing model he can't
-meet. Archived threads show these surfacing *after* a long discussion, which wastes the effort and
-dents confidence when it lands.
-
-Raise it in the letter only when it is material, meaning it could realistically sink the job later.
-Then state it plainly and pair it with what he *can* do: *"I work in Cinema 4D and deliver rendered
-frames and layered files; if you need the native Blender scene to edit in-house, I'm not the right
-production partner for that part, though I can build the look and hand over reference renders."*
-Honesty here preserves the relationship and often keeps a reduced version of the job. Do not
-volunteer limitations nobody asked about; a constraint that was never going to matter just
-introduces doubt.
-
-### Scope: cold versus warm
-
-**Cold** means the client has not looked at Mehmet yet: a marketplace job he found and applied to, or
-a cold pitch by email or LinkedIn. Checks 2 and 3 are for cold work, where the whole problem is being
-chosen out of a crowd of strangers; check 2 additionally needs a public post to judge, so it does not
-apply to cold outreach.
-
-**Warm** means they came to him: an invite, a buyer who messaged first, a Behance or email inquiry.
-They have already looked and already chose to approach him, so both questions are settled. Run checks
-1 and 4 only, in the reinterpreted form above, and never talk him out of a warm lead on positioning
-grounds.
-
----
-
-## Step 1b — Fiverr only: ask Mehmet whether to QUALIFY or QUOTE
-
-**This step runs on Fiverr and nowhere else.** Upwork, Behance and email go straight on to Step 2
-with the full proposal. The reason is that the evidence behind it is Fiverr data: 30 archived Fiverr
-threads where good proposals went quiet because they arrived before the buyer had decided anything.
-
-First work out what the buyer has actually **confirmed**, not what they have described:
-
-| | Confirmed? |
-|---|---|
-| **Scope** | A specific deliverable count, or just "some images"? |
-| **Deadline** | A real date, or "soon"? |
-| **Budget** | A number or a band, or nothing? |
-
-Then ask Mehmet which way to play it, with a recommendation attached. Use AskUserQuestion, and make
-the recommendation follow the table:
-
-- **Any of scope, deadline or budget unconfirmed → recommend QUALIFY.** Say which one is missing.
-- **All three confirmed → recommend QUOTE.**
-- **The buyer has directly asked for a price → recommend QUOTE for a defined stage**, whatever else
-  is unknown. Deferring a direct price request with more questions reads as evasion, and it recurs in
-  the stalled threads. Give a number for something specific, even if the full scope is still open.
-
-Phrase the options in his terms, for example: *"Budget and deliverable count are both open. I'd send
-a short qualifying reply that names one first stage at a fixed price and asks for the budget band;
-or I can write the full offer now if you'd rather put everything on the table."*
-
-### QUALIFY output
-
-Short. One piece of real diagnosis, one named first stage with a fixed price and a date, one
-question for the missing constraint. **No** full pricing table, **no** deliverable system, **no**
-discovery questionnaire. The buyer cannot evaluate a full solution because they have not yet decided
-what they want; giving them one is what produced the silence.
-
-Pick the first stage from the pilot ladder in `references/deal-sequencing.md`.
-
-### QUOTE output
-
-The full thing: staged pricing, scope statement, the lot, as laid out in Steps 4-6.
-
-### Round two: Mehmet pastes the buyer's reply
-
-When a QUALIFY message gets answered and Mehmet comes back with what the buyer said, **build the
-QUOTE from it**. Do not re-qualify; they have just told you the thing you asked for. Read
-`references/deal-sequencing.md` for how to handle the specific reply:
-
-- **They gave a budget band** → quote inside it, staged, with the first stage priced separately.
-- **They said it's too expensive** → give three explicit paths (full scope, starter scope, paid
-  advice or production spec), never an explanation of why the work costs what it costs.
-- **They asked for proof or a free sample first** → offer a small paid proof stage rather than
-  arguing about the request.
-- **They revealed a technical mismatch** → say so plainly and name the adjacent thing Mehmet can do.
-
-Carry the diagnosis from the first message into the quote; the buyer already agreed with it, and
-repeating it is what makes the second message feel continuous rather than templated.
-
----
-
-## Step 2 — Do the looking before the writing
-
-This is where the proposal is actually won, and it is the part almost nobody does. Before writing a
-word, find something true and specific about *their* material:
-
-- Open the client's website, Amazon listing, Instagram, or webshop if a name or URL is anywhere in
-  the brief. Look at their **current images**.
-- If the brief names competitors, look at those too. Referencing a client's competitor back to them
-  is one of the strongest signals available; it proves the reading was real.
-- Look at any attached reference images, moodboards, or example links.
-- Note what is actually wrong or hard: the lighting, the edge quality, the perspective mismatch, the
-  reflection that gives away the composite, the label that won't hold at thumbnail size, the shadow
-  that doesn't sit the product on the surface.
-
-**The test for the opening line:** could the client have received this exact sentence from someone
-who never looked at their material? If yes, it isn't ready. Mehmet's advantage here is real; a
-retoucher can *diagnose an image* in a way a generalist cannot fake.
-
-If nothing is findable (no brand named, no images, pure text brief), fall back to naming the craft
-factor that will decide the result. That still beats a credential.
-
----
-
-## Step 3 — Find the angle: one diagnosis, one opinion
-
-The letter needs exactly two pieces of substance. More than two turns it into a wall.
-
-**The diagnosis.** The specific thing that will make or break this job, named in plain language.
-*"The pouch reads flat next to Zyn on shelf because everything's lit from one soft source; that's a
-lighting rebuild, not a retouch."*
-
-**The opinion.** One clear stance on how to do it, stated as a preference with a reason. Having an
-opinion is the fastest proof of expertise there is, and it is the thing AI-written proposals never
-have; they hedge.
-*"For six colourways I'd build this in 3D rather than retouch six photographs; you get the variants
-for free and the highlights stay consistent."*
-
-Both must be honest. If Mehmet hasn't done this exact work, the diagnosis can still be real craft
-observation, and the framing becomes *"Based on my experience with [genuinely adjacent area], I
-believe I can help here; the part that will decide it is…"* Never invent a track record.
-
----
-
-## Step 4 — Write the cover letter
-
-Target **120-180 words** on Fiverr, Behance and email. Clients scan. **Upwork is the exception:**
-it uses its own problem-first structure and runs longer, **180-260 words**; see *Upwork structure*
-below. Every other rule in this step still applies there.
-
-### The first 225 characters carry the whole thing
-
-On Upwork this is literally all the client sees in the list. Treat it as a headline. It must contain,
-in this order:
-
-1. **Their goal, mirrored** — so they feel read
-2. **The observation or proof** — so they believe you can do it
-3. **A hint of the how** — so there is a reason to open
-
-Start with **"Hi [Name],"** — use the buyer's first name whenever it appears in the brief or their
-review history. Two letters beats "Hello" and "Dear"; every character in the preview is real estate.
-If no name is findable, "Hi," alone is fine. Never "Dear Sir/Madam", never "Hi there".
-
-**Never open with "I".** The first word after the greeting should be about them or about the work.
-
-### Structure
-
+**Short form, 70 to 110 words.** Use it when the verdict is APPLY SHORT or SKIP, the brief is short and plain, Step 2 found nothing, or the current test assigns it.
 ```
 Hi [Name],
-
-[1-2 sentences: their goal mirrored + the specific observation. This is the preview. Write it last
-and rewrite it three times.]
-
-[2-3 short lines, each carrying one real observation, decision, or piece of proof. One line = one
-idea. This is the scannable middle; a client reads it in five seconds.]
-
-[1 line: the mechanism and the practical band — how you'd run it, rough delivery window, revisions.]
-
-[1 question they can answer in ten seconds.]
-
+[1-2 sentences: what you saw, or their goal in their words, and the one thing that decides the result. This is the preview.]
+[1-2 sentences: how you'd do it.]
+[The first step: what, price, when.]
+[Proof: one comparable piece of work + the link, or what is attached.]
+[One question.]
 Mehmet
 ```
 
-The middle can be short standalone lines or light bullets; whichever reads faster. Do not write a
-paragraph block. A wall of text is dead on arrival, however good the words are.
-
-### Upwork structure: show we understand the problem, then solve it
-
-On Upwork, replace the structure above with this one. The client is reading dozens of proposals that
-all claim skill; the one that shows it understood the problem better than the brief described it is
-the one that gets opened and answered. That understanding is what the extra length is for; it is not
-room for more credentials.
-
+**Standard form.** Ceiling 180 words on Upwork, Behance and Contra; 150 on Fiverr; 140 on LinkedIn and email.
 ```
 Hi [Name],
-
-[UNDERSTANDING: 1-2 sentences. Their goal, and what is really going on underneath it. This is the
-preview, so it must also pass the 225-character test above.]
-
-[THE PROBLEM: 2-4 short sentences. A short summary of what the issue actually is. Think past the
-brief: what is causing it, what the client may not have named, what will decide whether the result
-works. Be specific about the image, the product, the use (Amazon, DOOH, social, print).]
-
-[THE SOLUTION: 2-4 short lines. How we would solve that exact problem: the approach, the decision we
-would make and why, and the first stage. This is where the opinion from Step 3 lives.]
-
-[EXPERIENCE (only if it adds something): 1-2 lines. One genuinely relevant brand, comparable job or
-result. On cold applications, end this part with the Expert-Vetted line below.]
-
-[1 question they can answer in ten seconds.]
-
+[WHAT YOU SAW, 1-2 sentences: their goal and the observation. This is the preview.]
+[WHY IT IS HARD, 1-2 sentences, from what you saw. Flag inference: "From what's in the post, the risk is..."]
+[HOW, 2-3 short sentences: the order of operations, the one decision and why.]
+[THE FIRST STEP, 1 sentence: deliverable, price, delivery time.]
+[PROOF, 1 sentence: one comparable piece of work, what is attached, one link.]
+[One question.]
 Mehmet
 ```
+If the client listed questions, answer each in one line (about 15 words); the answers replace WHY and HOW. Only then may the ceiling stretch to 240.
 
-**Defining the problem is not restating the brief.** Don't stick to what was written; expand it and
-think about what the problem actually is. The brief says what the client *asked for*; the problem
-section says *why it's hard or why it isn't working yet*, drawn from the looking in Step 2 and
-Mehmet's craft knowledge. *"You need six colourway renders of the pouch"* is a restatement. *"The
-current shots are lit from one soft source, so the pouch reads flat next to Zyn on shelf; re-shooting
-six colourways won't fix that, because the problem is the light, not the retouch"* is a problem
-definition. When the brief is thin, reason from the product, the platform it's for and what usually
-breaks in that kind of job, and frame it honestly as a read (*"From what's in the post, the real risk
-here is…"*), never as fact about their business that nobody told us.
+### What goes in each part
 
-**The solution must answer the problem as defined**, not the brief as written. If the problem section
-names the lighting, the solution says how the lighting gets rebuilt. A solution that could be pasted
-under any problem is filler.
+- **Middle:** the order of operations (*"geometry first, then light, then skin"*); the system that makes image 40 match image 1; where AI output fails, specifically; the last 10% (contact shadow, reflection); handover details that save their team time. One or two of these, not all.
+- **Proof:** one comparable piece of work, named: a Claims List brand with the kind of work done for it, or a case study from the link map. No invented counts, results or dates, and no list of logos. It may point at an attachment (*"the attached medical fridge shows the level of product detail"*).
+- **Expert-Vetted (cold Upwork only):** folded into the proof sentence, never its own sentence and never in the first 225 characters: *"26 years in commercial post, Expert-Vetted here (Upwork's top 1%); compositing is the core of it: mehmet-turan.com/image-compositing"*. Drop it on warm invites.
+- **Close:** one either/or question, answerable in ten seconds: the missing constraint (*"Roughly how many SKUs in the first batch, 10 or 100?"*), or, when scope is already clear, the go-ahead on the first step (*"Should I start with the cheeseburger?"*).
 
-**Experience is optional; include it only when it strengthens this specific case.** One line, one
-relevant proof point, no list of logos. Follow the overclaim rules in *Voice*; where the match is
-adjacent, use *"I believe I can help based on my experience with [related area]."*
+### The preview
 
-**The Expert-Vetted line (Upwork cold applications only).** Close the experience part with one
-sentence explaining the badge, because many clients see it without knowing what it means. Use
-Upwork's own framing, the top 1% of *talent* on the platform, not "of designers":
-*"I'm also in Upwork's Expert-Vetted group, the top 1% of talent on the platform."* Keep it out of the
-first 225 characters; the preview belongs to the client's problem. Include it even when the experience
-line is otherwise skipped. Drop it on warm invites: those clients have already opened the profile and
-seen the badge, and repeating it reads as re-selling.
+The first ~225 characters (Upwork list view, Fiverr first two lines, the subject line in email) decide whether the letter is opened. They hold their goal and the observation. Start "Hi [First name]," when a name is findable, else "Hi,". Never "Dear Sir/Madam" or "Hi there". The first sentence is about them or the work. "I looked at your listing" and "I watched the reference" qualify, because they report the looking; "I am", "I have", "I can" and "I'd love" do not.
 
-The closing question, links and "never open with I" rules are unchanged. With the extra length,
-readability matters more, not less: short paragraphs, white space between parts, no block of text.
+### Show the work
 
-### The closing question
+For a visual service, a picture does more than a paragraph. Every output has an **ATTACH** block: one to three specific pieces, by title, matched to how the job will be produced.
+- Contra: Work items from `list_portfolio_projects` for `mehmet_turan`. Real product work for product jobs, full brand case studies for branding jobs.
+- Upwork: portfolio items when the connector returns them (`get_profile`); else images from the matching portfolio page.
+- Behance: the matching Behance projects. Email: no attachments on a first cold email; link instead.
+- If you cannot name a real piece, write "Mehmet to pick 1 or 2 images closest to [X]". Never invent a title.
 
-End on a question mark. An open loop is hard for a brain to ignore, and one easy question reliably
-lifts reply rates. Two rules:
+### By platform
 
-**It must be answerable in ten seconds or less.** Yes/no, a number, a date, a pick between two
-options. Anything needing a paragraph back is homework, and homework loses the reply.
+- **Upwork.** Hourly rate **$55/hr** (raised from $49 on 2026-11-09; use it in every bid field and hourly estimate). Fixed milestones over hourly: on an hourly post, bid $55/hr and offer the first step as a fixed milestone. Rate above their band: say so plainly (*"My rate is $55/hr, above your band, and I'd rather say so than quote low."*).
+- **Fiverr.** The offer panel carries price and delivery, so the message gives a reason to trust the person; a video, if requested, is attached, never linked.
+- **Behance job list (cold).** He found the post; the reader did not pick him. The opening has to earn it like any cold letter. Name 35milimetre and the three-person studio in one honest line, attach or link the matching Behance projects, and keep to the short or standard form.
+- **Behance inquiry (warm).** They found his work and wrote first. Go straight to their project; do not re-sell the portfolio.
+- **Contra.** Cold, like the Behance job list. His Contra profile has no reviews yet, so the letter and the attachments carry the proof; never lean on Contra reputation, and never use the Expert-Vetted line or Upwork stats. Keep the conversation and payment on Contra; a portfolio link is fine, an email or phone number is not. Leave the calendar link in Contra's own field.
+- **Email / LinkedIn.** The subject line is the preview: six to nine words naming their thing.
 
-**Where a deal-critical constraint is missing, the question should be that constraint.** This is the
-highest-value use of the one question available: it earns the reply *and* unblocks the quote at the
-same time. Budget band, deadline, deliverable count, platform, or whether usable assets exist.
+### Link map (Webflow, verified 2026-10-14)
 
-Good: *"Do you have a target budget for the full set, or should I price the first image only?"* ·
-*"Is the bottle already shot, or would this start from 3D?"* · *"Roughly how many SKUs are we
-talking?"* · *"Is this live already or still in planning?"*
+One link, inside the body. Upwork and Fiverr: mehmet-turan.com column only. Behance, Contra, LinkedIn, email, direct: 35milimetre.com column; where it says "none", use the mehmet-turan.com page and name 35milimetre in the sign-off. Match the link to **how Mehmet will produce the job** (AI video), not to the client's wording ("motion graphics"), and to the deliverable, not the industry.
 
-Bad: *"What's the vision for the brand?"* · *"Can you share your full brand guidelines and
-timeline?"* · a list of five discovery questions.
+| Service | 35milimetre.com | mehmet-turan.com |
+|---|---|---|
+| Image compositing, people in scene | /work/image-compositing | /image-compositing |
+| CGI into photo | /work/3d-compositing | /3d-compositing |
+| 3D modeling and rendering | /work/3d | /3d-modeling-rendering-compositing |
+| AI images, AI product images | /work/ai-images | /100-ai · /ai (product) |
+| AI fashion | /work/ai-fashion | /ai-fashion |
+| AI video, motion | /work/motion | /ai-video · /motion-design |
+| Non-alcoholic beverage | /work/beverage | /non-alcoholic-drinks |
+| Spirits, beer, wine | /work/spirits | /alcoholic-drinks |
+| Beauty, personal care | /work/personal-care-beauty | /cosmetics |
+| Supplements | /work/supplements | /supplements |
+| Packaging, label, bottle | /work/packaging | /packaging · /bottle-designs |
+| Food | /food | /food-retouch |
+| Headshot, portrait retouch | /headshot | /headshots |
+| Fashion retouch | /fashion | /fashion |
+| AI headshot | none | /ai-headshot |
+| Branding | none | /branding |
+| Product, e-commerce, Amazon | none | /product · /amazon |
+| CPG | none | /cpg |
+| Automotive | none | /vehicles |
+| Banners, ads, posters | none | /banner |
+| Vector illustration | none | /vector-illustration |
+| Architecture | none | /architecture |
+| Landscape, wildlife retouch | none | /landscape-adventure |
+| Beverage label case study | /blog/a-hard-seltzer-design-project | /sory-of-a-beverage-design-from-start-to-finish |
+| Fallback | /works | homepage |
 
-**A call is not the default next step.** For a buyer who has not chosen a direction, set a budget, or
-confirmed technical fit, a call is a large ask: it costs them a scheduling decision and half an hour
-to answer a question they could have answered in one line. Archived threads show calls offered as the
-standard closing move on conversations that then died. The default ask is a one-line reply, or
-accepting a small first stage. Offer a call only as a second option, or when a technical requirement
-genuinely needs live discussion; and never as the *only* path forward.
-
-Only **one** question in the letter, and only **one** primary call to action. Everything else Mehmet
-wants to know is held back.
-
-### Links
-
-One portfolio link, placed inside the body where it belongs, never as a footer. Two only if the job
-genuinely spans two distinct services. Which domain depends on the platform; see
-`references/platforms.md`. Pick the most specific URL from `references/portfolio-links.md`; the
-homepage is a fallback, not a default.
+Retired Squarespace paths (never link): /composites, /cgi-3d, /still-life, /cpg, /ecommerce, /cosmetics, /beverage, /wines-liquors, /video, /advertisements, /automotive, /galleryai, /ai-composite, /ai-photography, /news. Case studies live under /blog/ (e.g. /blog/creed-case-study-a-nicotine-pouch-packaging-system, /blog/zf-advertisement-renders, /blog/sony-atmos-soundbar-visuals). `/poster-design` is a 404; use /banner.
 
 ---
 
-## Step 5 — Write the video script
+## Step 5: Price the first step
 
-Mehmet records a short video for most applications. This is the single biggest differentiator
-available right now: clients receive forty text proposals and zero videos, and a post-production
-artist showing craft on screen is far more persuasive than one describing it.
+> I'd start with **one [hero image / test clip / concept], $X, delivered in [n] days.**
 
-**45-75 seconds. 110-180 spoken words. No intro card, no music, no "hope you're well".**
+- **Cold, any lane, any platform: X is $400 or less.** Shrink the first step until it fits: one hero render, one image, one 5-second clip, one flat concept. If the smallest honest step costs more, say so in the go/no-go and let Mehmet decide; never slip a four-figure number into a cold letter. Five threads went quiet after a $1,800+ range, and every 3D thread in a year died on a four-figure first number.
+- **The full-set number stays out of a cold letter** unless the client asked for a total or stated a budget. It goes in the PRICING block for Mehmet.
+- **Stated budget:** the first step fits inside it and counts toward it. Never quote above a stated budget in a first message; scope down to fit, and put what the budget would really cover in HELD BACK.
+- **No rate cards and no cost caveats** in a first message: no per-minute or per-image tables, no "AI generation billed separately", no "shoot costs extra". Those go in HELD BACK.
+- **The client asked for a paid test:** price it in the letter, every time.
+- **Free test requested:** offer a small paid test instead (e.g. one image, $120, two days).
+- **Warm leads** may use the pilot-ladder bands in `references/deal-sequencing.md`; still a first step before any total.
+- Fixed fees, not hourly. If the budget signals the cheapest option, say so honestly instead of shaving the number.
+- Ask for one thing at a time: a reply, or the first step. Never a call plus files.
 
-Record over *their* material where possible: their product page, their current images, their
-reference board. A screen recording with Mehmet talking over it beats a talking head, because it
-proves he looked.
+---
+
+## Output (default)
 
 ```
-[0-5s]   "Hi [Name], Mehmet here."
-[5-15s]  What you opened and looked at. "I pulled up your listing and had a look at the current
-         pack shots."
-[15-45s] The observation, pointed at on screen, and how you'd handle it. This is the body. Show, do
-         not claim.
-[45-60s] One line of genuinely relevant proof. A brand, a comparable job, a number.
-[60-75s] The ask, matching the letter's question. "Send me a message and I'll walk you through it."
-```
+[Fiverr only] MODE: QUALIFY or QUOTE, and why
 
-On Upwork, the script follows the same order as the letter so the two tell one story: the
-understanding at 5-15s, the problem shown on their material at 15-35s, the solution at 35-50s, then
-proof and the ask. The Expert-Vetted line stays in the letter; don't spend spoken seconds on it.
-
-Write it as spoken language, contractions and all. Read it aloud in your head; if a sentence needs a
-second breath, cut it. Mark the on-screen action in square brackets so Mehmet knows what to show.
-
-Where the platform makes an external video link awkward (Fiverr), note that the video should be
-uploaded as an attachment rather than linked.
+GO / NO-GO: [APPLY | APPLY SHORT | SKIP]: [the one fact that drives it]
+[1-2 more lines]
+LOOKED AT: [what was opened and what was seen there, or "nothing findable" and why]
 
 ---
-
-## Step 6 — Held-back questions, pricing, scope, follow-up
-
-**Held-back questions (3-5).** These do *not* go in the letter, and they are not a discovery
-questionnaire to send later either; sending one is how several archived threads ended. They are
-Mehmet's own list, for whenever the conversation reaches the point of needing them. Pick only
-questions whose answers would change the scope, approach or price: output and use (print, Amazon,
-DOOH, social), deliverable count, existing assets, current state of the material, style references,
-deadline, revision expectations, one-off vs ongoing.
-
-**Pricing.** Structure it in stages rather than presenting one big number or a wide range. A range
-signals uncertainty to a buyer who is still deciding, and a full-scope figure asks for a large
-commitment before they have seen anything. So:
-
-> First stage: **one [hero image / bottle build / test clip], $X, delivered by [date].** Once that's
-> approved, the same setup runs across the remaining [quantity]; indicative $Y-$Z for the full set.
-
-This turns a hard yes/no into a bounded one, and it is honest about how the work actually costs:
-the first piece carries the setup and the rest are cheaper because of it. Benchmarks and pilot
-pricing are in `references/pricing.md`; the ladder of what "first stage" means per service type is in
-`references/deal-sequencing.md`. Fixed fees, never hourly. If the budget signals they want the
-cheapest option, say so honestly rather than shaving the number.
-
-**Scope statement.** A neutral 60-100 word paragraph Mehmet can paste into the project or offer
-description. Not a pitch: a fence. What is delivered, in what format; what is explicitly not
-included; how many revision rounds. Only list exclusions that actually apply.
-
-**Follow-up.** Draft it now, with a send-by date 4-7 days out, so Mehmet never falls back on the
-generic check-in. A follow-up earns a reply only if it carries something new: a smaller option, a
-deadline on the quote, or a clean way to say no. Never *"just checking in regarding my previous
-offer… short call"*; that exact message was the terminal outbound in a large share of dead threads,
-because it gives the buyer no new reason to answer. Templates are in
-`references/deal-sequencing.md`.
-
----
-
-## Output format
-
-```
-MODE: [Fiverr only: QUALIFY or QUOTE, and why]
-
-GO / NO-GO
-[Two or three lines. The read on the job, with the reasons. On a cold application, say whether the
-brief is specific or generic, and whether the profile visibly backs what the letter will claim; a
-positioning mismatch gets flagged here, not used to kill the proposal. Include the fit check: any
-tool, file-type, implementation or ownership requirement Mehmet doesn't cover.]
-
----
-COVER LETTER  ([platform] · [n] words)
-
-[The letter.]
+COVER LETTER ([platform] · [Short | Standard] · [n] words)
+[The letter, ready to paste]
 
 ---
 PREVIEW CHECK
-[The first 225 characters, quoted exactly, with the character count. This is what the client sees
-before opening. Confirm it contains their goal, the proof, and a hint of the how. On Upwork, also
-confirm the letter follows understanding → problem → solution → (experience) → question, that the
-problem goes beyond the brief, and that the Expert-Vetted line is present on a cold application.]
+[First 225 characters quoted, with the count. Their goal and the observation: yes/no.
+Behance/Contra/email: the opening line or subject line instead.]
 
 ---
-VIDEO SCRIPT (~[n] seconds)
-
-[The script, with on-screen actions in brackets.]
-
----
-HELD BACK
-1. …  [3-5 questions Mehmet keeps for later; not to be sent as a list]
+ATTACH
+[1-3 pieces by title, or "Mehmet to pick 1 or 2 images closest to [X]"]
 
 ---
 PRICING
-**First stage: $X, delivered by [date].**
-**Full set (indicative): $Y – $Z**
-[1-2 lines on what the first stage proves and what moves the rollout number. Note offer type and
-delivery band where the platform needs one.]
+First step: $X, delivered in [n] days.
+Full set (indicative, for Mehmet): $Y-$Z
+[Upwork: the bid field figure, and milestone split if fixed]
 
 ---
-SCOPE STATEMENT
-[60-100 words, matter-of-fact.]
+HELD BACK (for Mehmet, not to send)
+1-3 questions or cost notes whose answers would change scope or price.
 
----
-FOLLOW-UP  (send [date], 4-7 days out)
-[The tailored message: names their project, offers a reduced option, gives a clean opt-out.]
+Logged to the Proposal Tracker: [row link]
 ```
 
-On Behance and email, drop the PREVIEW CHECK and replace it with the subject line or opening line;
-`references/platforms.md` says which. In Fiverr QUALIFY mode, drop the HELD BACK, SCOPE STATEMENT and
-full-set pricing; the output is just the mode, go/no-go, short letter, video script, first-stage
-price, and follow-up.
+Fiverr QUALIFY: MODE, GO/NO-GO, letter, ATTACH, first-step price, log line. Nothing else.
+
+**On request only:**
+- **"video script"**: 45-75 seconds, 110-180 spoken words, recorded over their material where possible: hello and studio (5s), their brief or site on screen (10s), the observation demonstrated (30s), one portfolio page and one proof line (15s), the same question (10s). Tick `Video` on the row.
+- **"scope"**: 60-100 neutral words: what is delivered, in what format, what is not included, how many revision rounds. Paste into the offer description (Fiverr) or the proposal.
+- **"follow-up"** (never for Upwork): new information only: a smaller option, a deadline on the quote, or a clean way to say no. Never "just checking in". Send-by date 4-7 days out.
 
 ---
 
-## Step 7 — Log it to the Proposal Tracker in Notion
+## Voice check (loop until clean)
 
-**Do this every time, automatically, once the output above is written. Don't ask first.** Mehmet
-wants every invite this skill touches recorded, so the platform and outcome data builds up on its
-own instead of depending on him remembering to do it.
+Write the way Mehmet writes (the my-tone skill is built from his sent mail; load it when it is available): the first line is the point, no sentence over 25 words, contractions, plain verbs, "we" for studio work and "I" for his own. He is direct and warm, confident without swagger. He says what is possible and does not promise what he hasn't scoped. A letter that sounds like an essay about the craft is wrong even when every sentence is true.
 
-The database is **Proposal Tracker**, in the Wiki:
-`https://app.notion.com/p/b5e95a8ce7da4eac97989c3c480ff873`
-data source `collection://7d95fdcc-4f74-42b6-90eb-58a6a9d63748`
+Scan the draft for each of these, fix every hit, then scan again:
+- em dashes; a first sentence about Mehmet; British spelling; a sentence over 25 words.
+- a statement about the client's material that Step 2 did not actually see.
+- structural AI tells: "not X but Y" or "X more than Y" used more than once; one-line aphorisms (*"Skin is the tell."*); "the real job is", "the whole job", "that is what makes"; three-item lists used for rhythm; bold headers inside a short message; a credential paragraph before the client's problem.
+- banned openers: "I can help you with this", "I'd love to work on this", "Happy to help", "right in my wheelhouse / exactly my specialty", "Your project sounds interesting", "As an expert in", "I am passionate about", "I have vast experience in".
+- AI words: "This is exactly the type of project I specialize in", "In today's competitive landscape", "Let me know if you'd like to discuss further", "tailored solutions", "seamless", "elevate", "unlock", "leverage", "robust", "delve", "streamline".
+- cold letter with no priced first step; a cold first number above $400; any number above the stated budget; a rate card or cost caveat.
+- the honest-fit sentence used alone, or without naming the adjacent work; Expert-Vetted as its own sentence.
+- `35milimetre.com` on Upwork or Fiverr; `mehmet-turan.com` on Contra or Behance where the map has a 35milimetre.com path; any retired path; more than one link.
+- any brand or claim not on the Claims List; Apple anywhere.
+- more than one question or call to action; a call as the only next step.
+- over the word ceiling; client's listed questions not answered; no ATTACH block.
 
-### First contact on a project: create a row
+---
 
-Use `notion-create-pages` with `parent: {"data_source_id": "7d95fdcc-4f74-42b6-90eb-58a6a9d63748"}`.
-Map the fields like this:
+## Step 6: Log it (every time, automatically)
 
+**Proposal Tracker**, data source `collection://7d95fdcc-4f74-42b6-90eb-58a6a9d63748`.
+
+**Find the row first, never duplicate.** If the input was a Tracker row, update it. If it was a Job Feed row, check its `Proposal` relation; update the linked Tracker row if one exists. Otherwise search the Tracker by `Source Link` (or the job id digits after `~02`) and by client name. Create a row only when none exists.
+
+**Properties on create or update:**
 | Property | Value |
 |---|---|
-| `Project` (title) | Buyer/client name (or a short handle if none given) plus what the job is, e.g. *"James — craft gin CGI renders"*. This is the only field you have to invent well; make it something Mehmet recognises at a glance later. |
-| `Platform` | Whatever was answered in Step 0: Upwork, Fiverr, Behance, or Direct (Web/Email/LinkedIn). |
-| `Lead Status` | `Cold` if Mehmet found the job and applied, `Warm` if the client invited him or messaged first. This is Step 0's second question, and it also records whether the Step 1 selection checks applied. |
-| `Status` | **Always `No Reply` on creation.** Never set Reject or Won yourself; the skill has no way to know the outcome. Mehmet updates this field by hand (or tells you to) once he hears back. |
-| `Fiverr Mode` | `Qualify` or `Quote`, matching Step 1b's MODE line. `N/A` on every non-Fiverr platform. |
-| `Proposal Viewed` · `Profile Viewed` · `Replied` | **Leave all three unchecked on creation.** They are the funnel, and unchecked means *not yet*, not *no*. Tick them later when Mehmet reports what happened, or when he asks you to update a row. |
-| `Date Logged` | Today. |
-| `Follow-up Due` | The send-by date on the FOLLOW-UP block. |
-| `Price Quoted` | The pricing line(s) as plain text, e.g. *"$180 first stage / $580 full set"* or *"$1,800-$3,200 milestoned"*. |
-| `Source Link` | The job post URL if the brief included one; omit the property otherwise. |
-| `Won Value` | Leave unset. Mehmet fills this in only once a job is marked Won. |
+| `Project` | Client name or handle + the job, e.g. "James: craft gin CGI renders" |
+| `Platform` | Upwork, Fiverr, Behance, Contra, or Direct (Web/Email/LinkedIn) |
+| `Lead Status` | Cold or Warm (a Behance job-list post is Cold) |
+| `Status` | `No Reply` on creation. Never set Reject or Won. |
+| `Verdict` | Apply, Apply Short or Skip, as written in the go/no-go |
+| `Variant` | Short or Standard: the form the letter used |
+| `Fiverr Mode` | Qualify or Quote; N/A elsewhere |
+| `Date Logged` | today |
+| `Price Quoted` | first step / full set as plain text |
+| `Price Shown` | ticked if a price is in the letter |
+| `Source Link` | job URL, if any |
+| `Work Category` | Beverage, Supplements, Beauty/Cosmetics, Fashion AI, Packaging/Label, 3D/CGI Render, Retouch/Composite, Video/Animation, Arch-Viz, Automation/Skills, Other |
+| `Opening Type` | what the first 225 characters lead with: Observation on their material, Problem diagnosis, Question, Credential, Other |
+| `Letter Words` | word count of the letter |
+| `Link Used` | the portfolio URL in the letter |
+| `Attachments` | the titles from the ATTACH block |
+| `Video` | ticked only if a script was written |
+| `Job Feed` | relation to the Job Feed row, when there is one |
+| `Behance Days Left` | Behance only: the "days left to close" number if the post shows it; else empty. One-time snapshot. |
 
-Page content, in this order, each under its own `##` header: **Request / Brief** (the brief as given,
-pasted in full or lightly trimmed if it was very long), **Cover Letter Sent**, **Video Script**,
-**Follow-up Message**. Skip a section only if that output block didn't exist (Fiverr QUALIFY mode has
-no scope statement to log, for instance; just log what was actually produced).
+Leave `Sent`, `Proposal Viewed`, `Profile Viewed`, `Replied` unticked; Mehmet's report or the sync sets them.
 
-### Round two on a Fiverr job: update, don't duplicate
+**Page body**, each under `##`: **Request / Brief** (pasted in full), **Looked At**, **Cover Letter Sent** (the final letter, word for word), **Pricing**, **Held Back**, plus any on-request block that was produced. Round two: append `## Round 2 [date]` with the buyer's reply and the new letter; update `Price Quoted` and `Fiverr Mode`.
 
-When Mehmet pastes a buyer's reply to a QUALIFY message (Step 1b's round-two case), this is the same
-deal continuing, not a new one. Before creating anything, search for the existing row: query the data
-source for a `Project` that matches the buyer or project (use `notion-query-data-sources` in SQL mode
-against `collection://7d95fdcc-4f74-42b6-90eb-58a6a9d63748`, or `notion-search` scoped to that data
-source). If found:
+**Job Feed row** (when there is one): set `Decision` to `Proposal drafted`. On Contra Job Feed also set its `Proposal` relation to the Tracker row (the Tracker `Job Feed` relation is Upwork only).
 
-- **Update**, don't recreate: `notion-update-page` with `command: "update_properties"` to set
-  `Fiverr Mode` to `Quote`, refresh `Price Quoted` with the new staged figures, and refresh
-  `Follow-up Due` with the new date. Leave `Status` alone; it's still Mehmet's call.
-- **Append**, don't overwrite, the page body: `notion-update-page` with `command: "insert_content"`
-  at the end, adding a `## Round 2 — [today's date]` section with the buyer's reply and the new
-  cover letter, video script, and follow-up.
+**When Mehmet says he sent it:**
+- Tick `Sent`. If he edited the letter, replace **Cover Letter Sent** with what he actually sent, recount `Letter Words`, and run Step 7 on the difference.
+- Upwork: put the **Upwork Proposal ID** on this same row (ask for it if he didn't give it) so the daily Upwork Application Sync ticks Viewed and Replied on the row that holds the letter. Set the Job Feed `Decision` to `Applied`.
+- Contra: to submit for him, use `apply_to_job_prepare` with the `jobPostingId`, show the preview, and call `apply_to_job_confirm` only after his explicit yes to that letter. Work-tab items may not expose an id; if so, he attaches them in Contra. After sending, set the Contra Job Feed `Decision` to `Applied`.
+- Never write to the Upwork Applications database; the sync owns it.
 
-If no matching row exists (round two arrived in a fresh session with no history), create one as
-above and note in the GO/NO-GO that this looks like a continuing thread Mehmet may already have
-logged elsewhere.
+**When a reply comes in** (Mehmet reports it, or you find `Replied` ticked while `Status` is still `No Reply`): set `Status` to `Discussing The Project`.
 
-### If Notion isn't reachable
-
-Don't block the proposal on this. Produce the full output regardless, note in one line that the
-Notion log couldn't be written, and suggest Mehmet paste it in manually later.
-
-### After logging
-
-Add one line to the end of your reply confirming it: *"Logged to the Proposal Tracker: [row link]"*
-(or *"...updated the existing row"* on a round two).
+If Notion is unreachable, don't block the proposal; say in one line that the log was not written.
+End the reply with one line: "Logged to the Proposal Tracker: [row link]".
 
 ---
 
-## Step 8 — When Mehmet asks why proposals aren't landing, read the funnel
+## Step 7: Learn from Mehmet's corrections
 
-Most freelancers track one number, hired or not, and by the time that answer arrives it teaches
-nothing. A rejection says *no*; a stage says *what to fix*. That is what the tracker's three boxes
-are for.
+Trigger: he edits or rejects part of a draft, pastes the version he actually sent, or reports how a client responded.
 
-| Where the client stopped | What it usually means | What to change |
-|---|---|---|
-| Proposal never viewed | Wrong jobs, or invisible in a crowded list | Job selection first (Step 1 check 2), then the preview line and how fast the proposal went out |
-| Viewed, no profile visit | The opening didn't earn the click: either it led with background instead of their problem, or there was nothing true to say because the positioning doesn't cover this work | Rewrite the first two lines around their problem. If one category keeps stalling here, it is Step 1 check 3, and the fix is the profile rather than the letter |
-| Profile visited, no reply | The profile didn't confirm what the letter promised | Surface the matching work at the top; tighten the headline toward what he actually wants to sell |
-| Replied, no hire | Later stage: scope, price, terms, or the conversation itself | `references/deal-sequencing.md`; usually a sequencing problem, not a writing one |
-
-The arithmetic is the point. 100 proposals and 10 views is not a profile problem, however much it
-feels like one; nobody got far enough to see the profile. Ten views, profile visits and no replies is
-the reverse: the letter did its job and the profile undid it.
-
-Before reading anything into the rows, check there is something to read. The boxes are ticked by
-hand, so **unticked means nobody has updated that row, not that the client never looked.** If most
-rows are blank, say so, ask Mehmet to fill in what he remembers for the last ten or so, and diagnose
-nothing until he has. A dozen rows is a hint, not a pattern.
-
-Split what you do have by `Platform` and `Lead Status`, because cold and warm fail in different
-places and averaging hides both. The funnel is Upwork-shaped: on Fiverr the middle stages are weak
-signals, and on a Behance, LinkedIn or email inquiry only `Replied` means anything, so read those on
-replies alone. If Notion can't be reached, say so and work from whatever Mehmet can tell you rather
-than stalling.
-
-Then name **one** thing to change. The instinct after a bad run is to rewrite the profile, the
-headline, the letter and the portfolio at once, and drop the price for good measure. That is
-guessing, and it usually fixes the part that was working.
+1. Find the principle, not the instance, in one sentence. ("Remove 'fast turnaround'" is an instance; "don't promise speed before scope is known" is the principle.)
+2. If a rule here or a lesson already covers it, it failed to apply: propose clearer wording of that rule instead of a second one.
+3. Show him the one-line lesson; save only on his yes, to Proposal Lessons: `Lesson`, `Source = Mehmet correction`, `Platform`, `What Changed` (the concrete edit), `Status = Logged`, `Date` = today.
+4. At five or more Logged or Confirmed lessons, offer a fold-in: merge them into the rules as principles, remove what they make redundant, propose the whole updated SKILL.md with the skill-proposal tool, and mark them `Folded in` once he saves it. A good fold-in leaves the skill the same length or shorter. **Name every reference file the change makes stale;** a fold-in that updates only this file is how the references drifted before.
 
 ---
 
-## Voice, and what never appears
+## Step 8: When he asks what's working, or why replies aren't coming
 
-Mehmet writes direct and warm. Confident without swagger. First person, "I" or "we" for the studio.
-He says what is possible and does not promise what he hasn't scoped.
+1. **Use the ledgers; don't re-sync.** Upwork outcomes: the **Upwork Applications** database (`collection://29db08db-f2c8-46a0-8056-e7f5d3ce0a49`), kept current by the daily sync; the Upwork Weekly Analyst already reports reply rates by lane and boost every Monday. Match to Tracker rows by `Upwork Proposal ID`, else the job id in `Source Link`. Fiverr, Behance, Contra and direct: Mehmet ticks `Replied` himself.
+2. **First check the data is filled in.** Unticked means nobody updated the row, not that the client never looked. Rows without `Sent` ticked or without a verbatim letter can't be compared; list them and ask him to fill in what he remembers.
+3. **Read the funnel before the letters.** Of sent rows, how many were viewed; of viewed, how many replied. Never viewed is job selection, timing and the first 225 characters. Viewed without a reply is the letter, the first number and the profile. Replied without a hire is sequencing (`references/deal-sequencing.md`).
+4. **Two groups, sent rows only.** Answered: `Sent` and (`Replied`, Discussing, Won, or Reject after a reply). Silent: `Sent`, no response, logged 14+ days ago. Exclude Spammer and unsent rows. Fewer than 15 answered or 30 silent: say so and stop.
+5. Compare on verdict, variant, work category, platform, cold vs warm, opening type, letter length, price shown, attachments, link, client signals, and the letters themselves. Report as "X of Y answered vs X of Y silent"; anything under 5 rows is a hint.
+6. Name **one** change, and turn it into a test for the next 10 to 20 proposals: a Proposal Lessons row with `Source = Reply pattern`, the evidence in `What Changed`, `Status = Testing`. At the next review, write `Test Result` and set `Confirmed` or `Dropped`. When the evidence is new, add the snippet to the Winning Proposal Patterns page.
 
-**Never overclaim.** Reference specific experience only where the work genuinely matches the
-documented service areas. Where it's adjacent, the honest line is *"I believe I can help based on my
-experience with [related area]."* Where there's no match, say so to Mehmet rather than inventing one.
-Overclaiming is the fastest way to lose a client on the call.
-
-**Never write these openers:** "I can help you with this" · "I'd love to work on this" · "Happy to
-help" · "This is right in my wheelhouse / exactly my specialty / right up my alley" · "Your project
-sounds interesting" · "As an expert in…" · "I am passionate about…" · "I have vast experience in
-[genre]" · a flat restatement of the brief with no insight.
-
-**Never write these AI tells** — clients now recognise them instantly and they read as a bulk send:
-"This is exactly the type of project I specialise in" · "usually comes down to one of three things" ·
-"In today's competitive landscape" · "Let me know if you'd like to discuss further" · "tailored
-solutions" · "seamless" · "elevate" · "unlock" · "leverage" · "robust" · "delve" · "streamline" ·
-three-item parallel lists used for rhythm rather than meaning · bold headers inside a short message ·
-a credential paragraph before the client's problem is mentioned.
-
-**Never use em dashes.** Use ";" or ":" and use them sparingly.
-
-**Never link 35milimetre.com on Upwork or Fiverr** (it carries contact details, which those platforms
-prohibit). Behance and email are fine. See `references/platforms.md`.
-
-Do not use AI to write the letter's voice; use it to do the research. The looking is the part that
-wins; the words should sound like a person who did the looking.
+**Current test (started 2026-11-12): Short vs Standard form.** On cold Upwork proposals with verdict APPLY, the date decides the form: an odd day of the month (Istanbul time) is Short, an even day is Standard. APPLY SHORT and SKIP letters are always Short and do not count. After 20 counted proposals, compare viewed and replied by `Variant`, write the result on the lesson row "Test: Short vs Standard form on cold Upwork", and say plainly if 20 was too few to tell.
 
 ---
+
+## Working with my-tone
+
+Both skills describe the same voice; my-tone holds the sentence shapes and this skill holds the first-message structure. For a **first message** to a client who has not replied yet, this skill's rules win: a priced first step instead of ranges, one closing question, no bold section labels, sign-off "Mehmet". Once the client has replied, my-tone's offer layouts, ranges and closes apply. Both read the same Claims List.
+
+---
+
+## Fallback Claims List (use only when Notion is unreachable; the Notion page wins)
+
+Confirmed by Mehmet 2026-10-31; brands added 2026-11-09 and 2026-11-10.
+- 26 years in commercial post-production, image manipulation and compositing.
+- 35milimetre: three people in Istanbul (Mehmet, a graphic designer, a 3D artist), plus trusted specialists.
+- Brands that can be named (one or two, matched to the brief; "delivered work for", never "agency of record"): Google, Renault, Peugeot, Diageo (Smirnoff), PepsiCo (Pepsi), Coca-Cola, Unilever (Dove, Degree), Starbucks, Eucerin, Panasonic, Lotus, US Postal Service, Pladis, MAC, ZF, McDonald's, KFC, Dickies, Dewalt, Nixie, Purina, Grayscale (finance and fintech briefs). For matching beauty and personal care work, also: L'Oréal, Maybelline, Barbasol, Element Brooklyn, PoolBar, Juus, Eloquor London, Bioeffect, Hanalys, Adieu, Alabasta Organik.
+- Never name: Apple.
+- Upwork Expert-Vetted (top 1% of talent), cold Upwork applications only. Creativepool "Top 25 Influential and Inspiring Retouchers & CGI Artists" since 2018.
+- Current or recent projects: only when Mehmet states them in this conversation.
+- Unproven fit: "I believe I can help based on my experience with [the closest real work, named]."
 
 ## Reference files
 
-Read the one you need; don't load them all.
+These add depth. None of them restates a length, a link, a claim or a follow-up rule; if one seems to disagree with this file, this file wins.
 
-- **`references/platforms.md`** — per-platform mechanics, link rules, length, psychology, and the
-  offer/preview specifics for Upwork, Fiverr, Behance and LinkedIn/email. **Read the relevant section
-  every time, after Step 0.**
-- **`references/deal-sequencing.md`** — evidence from 30 archived Fiverr threads on why good
-  proposals go quiet, plus the pilot ladder, objection paths, and follow-up templates. **Read on
-  every Fiverr job, and on any job that looks big, vague or early.**
-- **`references/portfolio-links.md`** — the service-area to portfolio-URL table and the rules for
-  picking the right one.
-- **`references/pricing.md`** — pricing benchmarks by work type, with market context.
-- **`references/figma-weave.md`** — Figma Weave (Weavy.ai) vs ComfyUI. Read only when the brief
-  involves AI workflow setup or pipeline consulting.
-
-Two more reference docs live in the user's memory rather than in this folder, under the Freelance
-Proposal project subtree. Find them with the memory tools (`memory_list`, then `memory_read` on the
-matching path) rather than guessing a path: **`reference_profile_positioning`**, the current state of
-the Upwork profile for Step 1 check 3, and **`reference_portfolio_urls`**, service-area URL overrides
-that win over `references/portfolio-links.md` where they disagree. Both are worth a look on a cold
-application; if memory isn't reachable, the table in Step 1 and the links file here still stand.
-
-If Notion is available, search it for an existing template matching the project type before writing;
-there may be language or pricing already documented for this category. Use what's relevant, don't
-copy it verbatim; a template that reads like a template is the thing this whole skill exists to
-avoid.
+- `references/go-no-go-checks.md`: full signal tables for Step 1. Read on a cold application.
+- `references/platforms.md`: who the reader is on each platform, and platform mechanics.
+- `references/fiverr-qualify-quote.md`: Step 1b in full. Read on every Fiverr job.
+- `references/deal-sequencing.md`: why big proposals go quiet, the pilot ladder, objection paths. Read when a brief is big or vague, on a price objection, and on round two.
+- `references/pricing.md`: benchmarks by work type, for the PRICING block.
+- `references/funnel-diagnosis.md`: reading the funnel, for Step 8.
+- `references/video-script.md`: only when Mehmet asks for a video script.
+- `references/reference_profile_positioning.md`: what his Upwork profile visibly sells, for the profile check.
+- `references/figma-weave.md`: only for AI workflow or pipeline briefs.
