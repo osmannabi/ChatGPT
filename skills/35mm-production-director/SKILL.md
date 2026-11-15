@@ -65,6 +65,17 @@ Typical chains:
 
 Confirm the plan with the user before any slow step (simulations, full renders, batch encodes).
 
+### Advisor check on the plan
+
+If an advisor model is set for this session, consult it after you write the stage plan and before you show it to the user. A wrong workflow, chain order or model choice at this point costs credits on every later shot, so this is the check that pays for itself. Ask it to look for:
+
+- a workflow that does not fit the brief, or a missing stage
+- a chain order that forces rework (for example, grading before the comp is final)
+- handoff formats or output specs that do not match between stages
+- a cheaper route to the same deliverable
+
+Skip the check when the brief routes to one workflow with no chain; a plain handoff does not need a second opinion. If no advisor is set, carry on without it.
+
 ## Step 4: Preflight
 
 1. **Environment.** These workflows drive desktop applications. If there is no shell or device access to the user's computer in this session, stop and say the job needs Claude Code or the Claude desktop app with the computer connected.
@@ -110,6 +121,7 @@ Before passing to the next stage, check the output exists and that resolution, f
 
 - Grab a frame or screenshot of each final output and check it against the brief.
 - Confirm project files are saved and still editable (scenes, layers, masks, node trees).
+- If an advisor model is set and the job had more than one stage, consult it once before you call the job done: give it the brief, the stage plan and the QC results, and ask what the client is most likely to send back.
 - Summarise for the user in a few lines: what was delivered, where it is, anything that needs their eye.
 
 ## House rules (edit these to fit the studio)
